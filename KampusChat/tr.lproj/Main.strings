@@ -1,0 +1,64 @@
+
+
+/* Class = "UITextField";  */
+"0C8-2m-45Z.placeholder" = "Kullanıcı Adı";
+
+/* Class = "UIButton";  */
+"C2t-i8-oS3.normalTitle" = "Giriş Yap";
+
+/* Class = "UIButton";  */
+"KYI-g8-vlc.normalTitle" = "Kayıt Ol";
+
+/* Class = "UIButton";  */
+"RUo-oM-PC6.normalTitle" = "Şifremi Unuttum";
+
+/* Class = "UILabel";  */
+"q5V-f5-Y5A.text" = "Bir Hesabın Yok mu?";
+
+/* Class = "UITextField";  */
+"reu-2c-5e9.placeholder" = "Şifre";
+
+/* Class = "UILabel";  */
+"vVf-cl-3I6.text" = "Yeniden Hoşgeldin";
+
+/* Class = "UILabel";  */
+"9dg-tp-xNZ.text" = "Şifreni mi Unuttun?";
+
+/* Class = "UITextField";  */
+"jeg-Ud-pI8.placeholder" = "Email";
+
+/* Class = "UIButton";  */
+"ggf-0t-lTd.normalTitle" = "Kodu Gönder";
+
+/* Class = "UILabel";  */
+"Ka9-C8-jHX.text" = "Şifreni Hatırladın mı?";
+
+/* Class = "UIButton"; */
+"IDT-Nw-qbT.normalTitle" = "Giriş Yap";
+
+/* Class = "UILabel";  */
+"8Vi-Ma-X9H.text" = "Email adresinize 6 haneli bir kod gönderdik. Lüften mailinizi kontrol edin ve kodu aşağıdaki alana girin.";
+
+/* Class = "UITextField"; */
+"LbR-Pq-51a.placeholder" = "6 Haneli Kod";
+
+/* Class = "UIButton";  */
+"kXG-FF-eCx.normalTitle" = "Sonraki";
+
+/* Class = "UILabel";  */
+"IXJ-gl-ub6.text" = "Kod almadın mı?";
+
+/* Class = "UIButton"; */
+"vMC-Ea-Nm1.normalTitle" = "Kodu Tekrar Gönder";
+
+/* Class = "UILabel";*/
+"nog-CM-mSZ.text" = "Şifre Yenile";
+
+/* Class = "UITextField"; */
+"Ahr-hm-Dzd.placeholder" = "Yeni Şifre";
+
+/* Class = "UITextField"; */
+"pw1-ov-LpO.placeholder" = "Şifre Tekrarı";
+
+/* Class = "UIButton"; */
+"Sj4-Bz-X1r.normalTitle" = "Yenile";

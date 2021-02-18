@@ -1,0 +1,39 @@
+
+/* Class = "UITextField"; placeholder = "Username"; ObjectID = "0C8-2m-45Z"; */
+"0C8-2m-45Z.placeholder" = "Username";
+
+/* Class = "UILabel"; text = "Forgot Password?"; ObjectID = "9dg-tp-xNZ"; */
+"9dg-tp-xNZ.text" = "Forgot Password?";
+
+/* Class = "UIViewController"; title = "SigninViewController"; ObjectID = "BYZ-38-t0r"; */
+"BYZ-38-t0r.title" = "SigninViewController";
+
+/* Class = "UIButton"; normalTitle = "Sign in"; ObjectID = "C2t-i8-oS3"; */
+"C2t-i8-oS3.normalTitle" = "Sign in";
+
+/* Class = "UIButton"; normalTitle = "Sign in"; ObjectID = "IDT-Nw-qbT"; */
+"IDT-Nw-qbT.normalTitle" = "Sign in";
+
+/* Class = "UIButton"; normalTitle = "Sign up"; ObjectID = "KYI-g8-vlc"; */
+"KYI-g8-vlc.normalTitle" = "Sign up";
+
+/* Class = "UILabel"; text = "Do you remember the password?"; ObjectID = "Ka9-C8-jHX"; */
+"Ka9-C8-jHX.text" = "Do you remember the password?";
+
+/* Class = "UIButton"; normalTitle = "Forgot Password"; ObjectID = "RUo-oM-PC6"; */
+"RUo-oM-PC6.normalTitle" = "Forgot Password";
+
+/* Class = "UIButton"; normalTitle = "Send Code"; ObjectID = "ggf-0t-lTd"; */
+"ggf-0t-lTd.normalTitle" = "Send Code";
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "jeg-Ud-pI8"; */
+"jeg-Ud-pI8.placeholder" = "Email";
+
+/* Class = "UILabel"; text = "Don't have an account?"; ObjectID = "q5V-f5-Y5A"; */
+"q5V-f5-Y5A.text" = "Don't have an account?";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "reu-2c-5e9"; */
+"reu-2c-5e9.placeholder" = "Password";
+
+/* Class = "UILabel"; text = "Welcome Back!"; ObjectID = "vVf-cl-3I6"; */
+"vVf-cl-3I6.text" = "Welcome Back!";

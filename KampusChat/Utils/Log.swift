@@ -10,8 +10,12 @@ import Foundation
 class Log{
     
     
-    static func info(key:String, value:String){
-        print(""+key+":"+value)
+    static func info(key:String, value:String?){
+        print(""+key+":"+value!)
+    }
+    
+    static func info(key:String, value:Int64?){
+        print(""+key+":",value!)
     }
     
     

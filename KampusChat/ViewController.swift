@@ -12,48 +12,28 @@ import CoreData
 class ViewController: UIViewController {
     
     @IBOutlet weak var labelStatus: UILabel!
-    let database = Database()
+    let tokenViewModel = TokenViewModel(token: nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        checkStorageForToken()
+        tokenViewModel.initilazeToken()
+        perform(#selector(self.determineDirection),with:nil,afterDelay: 1)
+        //doldur()
     }
 
-    
-    private func checkStorageForToken(){
-        Log.info(key: "checkStorageForToken",value: "is Begun")
-        
-        let token = database.getCurrentToken()
-        if(token != nil){
-           
-            if(token?.token != nil){
-                perform(#selector(self.showHome),with:nil,afterDelay: 1)
-            }else{
-                perform(#selector(self.showSignin),with:nil,afterDelay: 1)
-            }
-            
-        }else{
-             // Something went wrong
-            Log.info(key: "checkStorageForToken",value: "Error Something Went Wrong")
-            labelStatus.text = NSLocalizedString("error_something_went_wrong",comment:"")
-            
-        }
- 
-        
-    }
-    
    
-    @objc private func showSignin(){
-        Log.info(key: "showSignin",value: "is Begun")
-        self.performSegue(withIdentifier: "viewTOsignin", sender: nil)
+    @objc private func determineDirection(){
+        Log.info(key: "determineDirection()",value: "is Begun")
+        
+        if(tokenViewModel.token != nil){
+            self.performSegue(withIdentifier: "viewTOhome", sender: nil)
+        }else{
+            self.performSegue(withIdentifier: "viewTOsignin", sender: nil)
+        }
+        
     }
     
-    @objc private func showHome(){
-    Log.info(key: "showHome",value: "is Begun")
-     self.performSegue(withIdentifier: "viewTOhome", sender: nil)
     
-    }
-
     /*
      ---- Version2 -----
     private func checkTokenFromApi(){

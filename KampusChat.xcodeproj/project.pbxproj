@@ -8,29 +8,31 @@
 
 /* Begin PBXBuildFile section */
 		67000E8A25D6936500616BDC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 67000E8825D6936500616BDC /* Localizable.strings */; };
+		67152B1A25E2CB53002C78CD /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67152B1925E2CB53002C78CD /* Storage.swift */; };
+		67152B1C25E2CDE1002C78CD /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67152B1B25E2CDE1002C78CD /* Token.swift */; };
+		67152B2025E2CF9C002C78CD /* TokenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67152B1F25E2CF9C002C78CD /* TokenViewModel.swift */; };
 		67169A1825D573B600D2F340 /* SigninViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67169A1725D573B600D2F340 /* SigninViewController.swift */; };
 		67169A1A25D578B500D2F340 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67169A1925D578B500D2F340 /* ForgotPasswordViewController.swift */; };
 		67169A2B25D5910F00D2F340 /* CodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67169A2A25D5910F00D2F340 /* CodeViewController.swift */; };
 		67169A2E25D5934100D2F340 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67169A2D25D5934100D2F340 /* Toast.swift */; };
 		67169A3025D59A1200D2F340 /* EmailValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67169A2F25D59A1200D2F340 /* EmailValidation.swift */; };
 		6742564A25D6D36A00DAE1D6 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6742564925D6D36A00DAE1D6 /* ResetPasswordViewController.swift */; };
-		676B40AB25DD4162003D3ACE /* Database.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 676B40A925DD4162003D3ACE /* Database.xcdatamodeld */; };
 		678D1E5725D437B3001F62DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678D1E5625D437B3001F62DC /* AppDelegate.swift */; };
 		678D1E5925D437B3001F62DC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678D1E5825D437B3001F62DC /* ViewController.swift */; };
 		678D1E5C25D437B3001F62DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 678D1E5A25D437B3001F62DC /* Main.storyboard */; };
 		678D1E5E25D437B4001F62DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 678D1E5D25D437B4001F62DC /* Assets.xcassets */; };
 		678D1E6125D437B4001F62DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 678D1E5F25D437B4001F62DC /* LaunchScreen.storyboard */; };
 		678F5B2025DE8B2C003AEEF3 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678F5B1F25DE8B2C003AEEF3 /* Log.swift */; };
-		67B1797F25DD455B00380E50 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B1797E25DD455B00380E50 /* Database.swift */; };
 		67F25D6025D7089600FF58D9 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F25D5F25D7089600FF58D9 /* WelcomeViewController.swift */; };
-		67F8397925DD97C600BE6EB8 /* Token+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F8397725DD97C600BE6EB8 /* Token+CoreDataClass.swift */; };
-		67F8397A25DD97C600BE6EB8 /* Token+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F8397825DD97C600BE6EB8 /* Token+CoreDataProperties.swift */; };
 		67F8397C25DDA15C00BE6EB8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F8397B25DDA15C00BE6EB8 /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		67000E8925D6936500616BDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		67000E8B25D6938D00616BDC /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		67152B1925E2CB53002C78CD /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		67152B1B25E2CDE1002C78CD /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
+		67152B1F25E2CF9C002C78CD /* TokenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenViewModel.swift; sourceTree = "<group>"; };
 		67169A1725D573B600D2F340 /* SigninViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninViewController.swift; sourceTree = "<group>"; };
 		67169A1925D578B500D2F340 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		67169A2325D5863B00D2F340 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Main.strings; sourceTree = "<group>"; };
@@ -38,7 +40,6 @@
 		67169A2D25D5934100D2F340 /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		67169A2F25D59A1200D2F340 /* EmailValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidation.swift; sourceTree = "<group>"; };
 		6742564925D6D36A00DAE1D6 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
-		676B40AA25DD4162003D3ACE /* Database.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Database.xcdatamodel; sourceTree = "<group>"; };
 		678D1E5325D437B3001F62DC /* KampusChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KampusChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		678D1E5625D437B3001F62DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		678D1E5825D437B3001F62DC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -48,10 +49,7 @@
 		678D1E6225D437B4001F62DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		678D1E8F25D44C61001F62DC /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		678F5B1F25DE8B2C003AEEF3 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
-		67B1797E25DD455B00380E50 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		67F25D5F25D7089600FF58D9 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
-		67F8397725DD97C600BE6EB8 /* Token+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Token+CoreDataClass.swift"; sourceTree = "<group>"; };
-		67F8397825DD97C600BE6EB8 /* Token+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Token+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		67F8397B25DDA15C00BE6EB8 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -66,6 +64,62 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		67152B1225E2BDB0002C78CD /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		67152B1325E2BE0A002C78CD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				67152B1725E2BEFD002C78CD /* Authentication */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		67152B1425E2BE10002C78CD /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				67152B1625E2BECB002C78CD /* Home */,
+				67169A1425D56A1200D2F340 /* Authentication */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		67152B1525E2BE56002C78CD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				67152B1825E2BF2E002C78CD /* Authentication */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		67152B1625E2BECB002C78CD /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				67F8397B25DDA15C00BE6EB8 /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		67152B1725E2BEFD002C78CD /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				67152B1B25E2CDE1002C78CD /* Token.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		67152B1825E2BF2E002C78CD /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				67152B1F25E2CF9C002C78CD /* TokenViewModel.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
 		67169A1425D56A1200D2F340 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
@@ -83,19 +137,10 @@
 			children = (
 				67169A2D25D5934100D2F340 /* Toast.swift */,
 				67169A2F25D59A1200D2F340 /* EmailValidation.swift */,
-				67B1797E25DD455B00380E50 /* Database.swift */,
 				678F5B1F25DE8B2C003AEEF3 /* Log.swift */,
+				67152B1925E2CB53002C78CD /* Storage.swift */,
 			);
 			path = Utils;
-			sourceTree = "<group>";
-		};
-		676B40A425DD3AC3003D3ACE /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				67F8397725DD97C600BE6EB8 /* Token+CoreDataClass.swift */,
-				67F8397825DD97C600BE6EB8 /* Token+CoreDataProperties.swift */,
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		678D1E4A25D437B3001F62DC = {
@@ -117,18 +162,18 @@
 		678D1E5525D437B3001F62DC /* KampusChat */ = {
 			isa = PBXGroup;
 			children = (
-				676B40A425DD3AC3003D3ACE /* Models */,
-				67000E8825D6936500616BDC /* Localizable.strings */,
+				67152B1525E2BE56002C78CD /* ViewModel */,
+				67152B1425E2BE10002C78CD /* ViewController */,
+				67152B1325E2BE0A002C78CD /* Model */,
+				67152B1225E2BDB0002C78CD /* View */,
 				67169A2C25D5933100D2F340 /* Utils */,
-				67169A1425D56A1200D2F340 /* Authentication */,
 				678D1E5625D437B3001F62DC /* AppDelegate.swift */,
 				678D1E5825D437B3001F62DC /* ViewController.swift */,
 				678D1E5A25D437B3001F62DC /* Main.storyboard */,
 				678D1E5D25D437B4001F62DC /* Assets.xcassets */,
 				678D1E5F25D437B4001F62DC /* LaunchScreen.storyboard */,
 				678D1E6225D437B4001F62DC /* Info.plist */,
-				676B40A925DD4162003D3ACE /* Database.xcdatamodeld */,
-				67F8397B25DDA15C00BE6EB8 /* HomeViewController.swift */,
+				67000E8825D6936500616BDC /* Localizable.strings */,
 			);
 			path = KampusChat;
 			sourceTree = "<group>";
@@ -217,20 +262,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67152B2025E2CF9C002C78CD /* TokenViewModel.swift in Sources */,
 				67F25D6025D7089600FF58D9 /* WelcomeViewController.swift in Sources */,
 				67169A1A25D578B500D2F340 /* ForgotPasswordViewController.swift in Sources */,
 				678F5B2025DE8B2C003AEEF3 /* Log.swift in Sources */,
 				67169A3025D59A1200D2F340 /* EmailValidation.swift in Sources */,
 				67169A2E25D5934100D2F340 /* Toast.swift in Sources */,
+				67152B1A25E2CB53002C78CD /* Storage.swift in Sources */,
 				6742564A25D6D36A00DAE1D6 /* ResetPasswordViewController.swift in Sources */,
 				67F8397C25DDA15C00BE6EB8 /* HomeViewController.swift in Sources */,
-				67F8397925DD97C600BE6EB8 /* Token+CoreDataClass.swift in Sources */,
-				67B1797F25DD455B00380E50 /* Database.swift in Sources */,
 				678D1E5925D437B3001F62DC /* ViewController.swift in Sources */,
-				67F8397A25DD97C600BE6EB8 /* Token+CoreDataProperties.swift in Sources */,
 				678D1E5725D437B3001F62DC /* AppDelegate.swift in Sources */,
 				67169A2B25D5910F00D2F340 /* CodeViewController.swift in Sources */,
-				676B40AB25DD4162003D3ACE /* Database.xcdatamodeld in Sources */,
+				67152B1C25E2CDE1002C78CD /* Token.swift in Sources */,
 				67169A1825D573B600D2F340 /* SigninViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -444,19 +488,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		676B40A925DD4162003D3ACE /* Database.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				676B40AA25DD4162003D3ACE /* Database.xcdatamodel */,
-			);
-			currentVersion = 676B40AA25DD4162003D3ACE /* Database.xcdatamodel */;
-			path = Database.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 678D1E4B25D437B3001F62DC /* Project object */;
 }

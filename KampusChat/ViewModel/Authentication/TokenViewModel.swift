@@ -14,6 +14,12 @@ class TokenViewModel{
     var token:Token?
     let storage = Storage()
     
+    /**
+     @Params token:Token?
+     Description: If token is nil, that means it will be initialized from Storage.
+                  If it is not nill, that means it will be initialized from where the instance created.
+     */
+    
     init(token:Token?){
         
         if(token != nil){

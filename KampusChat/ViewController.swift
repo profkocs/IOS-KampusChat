@@ -17,31 +17,35 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tokenViewModel.initilazeToken()
-        perform(#selector(self.determineDirection),with:nil,afterDelay: 1)
-        //doldur()
+        determineDirection()
     }
 
    
-    @objc private func determineDirection(){
+     private func determineDirection(){
         Log.info(key: "determineDirection()",value: "is Begun")
         
-        if(tokenViewModel.token != nil){
-            self.performSegue(withIdentifier: "viewTOhome", sender: nil)
-        }else{
-            self.performSegue(withIdentifier: "viewTOsignin", sender: nil)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            
+            if(self.tokenViewModel.token != nil){
+                self.showHome()
+            }else{
+                self.showSignin()
+            }
+            
         }
         
     }
     
     
-    /*
-     ---- Version2 -----
-    private func checkTokenFromApi(){
-     // check out if token still is valid.
+    private func showHome(){
+        self.performSegue(withIdentifier: "viewTOhome", sender: nil)
     }
- */
     
+    private func showSignin(){
+        self.performSegue(withIdentifier: "viewTOsignin", sender: nil)
+    }
     
+  
     
 }
 

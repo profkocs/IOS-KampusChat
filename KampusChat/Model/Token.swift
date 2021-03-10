@@ -8,18 +8,22 @@
 
 import Foundation
 
-class Token:NSObject{
+class Token:Codable{
     
     
-    var user_id:Int64
-    var token_key:String
-    var token_refresh_key:String
+    var user_id:String
+    var accessToken:String
+    var accessTokenExpiration:String
+    var refreshToken:String
+    var refreshTokenExpiration:String
     
 
-    init(user_id:Int64, token_key:String, token_refresh_key:String){
+    init(user_id:String, accessToken:String, accessTokenExpiration:String, refreshToken:String, refreshTokenExpiration:String){
         self.user_id = user_id
-        self.token_key = token_key
-        self.token_refresh_key = token_refresh_key
+        self.accessToken = accessToken
+        self.accessTokenExpiration = accessTokenExpiration
+        self.refreshToken = refreshToken
+        self.refreshTokenExpiration = refreshTokenExpiration
     }
     
     

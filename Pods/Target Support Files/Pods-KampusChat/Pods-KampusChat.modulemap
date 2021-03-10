@@ -1,0 +1,6 @@
+framework module Pods_KampusChat {
+  umbrella header "Pods-KampusChat-umbrella.h"
+
+  export *
+  module * { export * }
+}

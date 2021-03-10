@@ -12,14 +12,17 @@
 		67152B1C25E2CDE1002C78CD /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67152B1B25E2CDE1002C78CD /* Token.swift */; };
 		67152B2025E2CF9C002C78CD /* TokenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67152B1F25E2CF9C002C78CD /* TokenViewModel.swift */; };
 		67169A1825D573B600D2F340 /* SigninViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67169A1725D573B600D2F340 /* SigninViewController.swift */; };
-		67169A1A25D578B500D2F340 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67169A1925D578B500D2F340 /* ForgotPasswordViewController.swift */; };
-		67169A2B25D5910F00D2F340 /* CodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67169A2A25D5910F00D2F340 /* CodeViewController.swift */; };
 		67169A2E25D5934100D2F340 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67169A2D25D5934100D2F340 /* Toast.swift */; };
 		67169A3025D59A1200D2F340 /* EmailValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67169A2F25D59A1200D2F340 /* EmailValidation.swift */; };
+		6721B73D25E859ED0063DB97 /* SigninTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6721B73C25E859ED0063DB97 /* SigninTests.swift */; };
+		67248BF625F909E30095F5AD /* ApiURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67248BF525F909E30095F5AD /* ApiURL.swift */; };
 		6733398E25E6CF0F002485DD /* Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6733398D25E6CF0F002485DD /* Spinner.swift */; };
-		6742564A25D6D36A00DAE1D6 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6742564925D6D36A00DAE1D6 /* ResetPasswordViewController.swift */; };
-		6755B5E825E5883E00549B19 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6755B5E725E5883E00549B19 /* Authentication.swift */; };
-		6755B5EA25E588D900549B19 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6755B5E925E588D900549B19 /* AuthenticationViewModel.swift */; };
+		673AFCF725F7A2D600995DE1 /* Signin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673AFCF625F7A2D600995DE1 /* Signin.swift */; };
+		673AFCF925F7A31900995DE1 /* SigninViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673AFCF825F7A31900995DE1 /* SigninViewModel.swift */; };
+		673AFCFC25F7A41200995DE1 /* SigninService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673AFCFB25F7A41200995DE1 /* SigninService.swift */; };
+		673AFCFF25F7A44C00995DE1 /* TokenProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673AFCFE25F7A44C00995DE1 /* TokenProtocol.swift */; };
+		673AFD0125F7A87600995DE1 /* ResponseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673AFD0025F7A87600995DE1 /* ResponseProtocol.swift */; };
+		673AFD0425F7AA9A00995DE1 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673AFD0325F7AA9A00995DE1 /* ApiManager.swift */; };
 		678D1E5725D437B3001F62DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678D1E5625D437B3001F62DC /* AppDelegate.swift */; };
 		678D1E5925D437B3001F62DC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678D1E5825D437B3001F62DC /* ViewController.swift */; };
 		678D1E5C25D437B3001F62DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 678D1E5A25D437B3001F62DC /* Main.storyboard */; };
@@ -27,24 +30,49 @@
 		678D1E6125D437B4001F62DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 678D1E5F25D437B4001F62DC /* LaunchScreen.storyboard */; };
 		678F5B2025DE8B2C003AEEF3 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678F5B1F25DE8B2C003AEEF3 /* Log.swift */; };
 		67F8397C25DDA15C00BE6EB8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F8397B25DDA15C00BE6EB8 /* HomeViewController.swift */; };
+		A8BDE22FC7803FD4645B8767 /* Pods_KampusChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 844EDEE1EF9D123B23AE4FAD /* Pods_KampusChat.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		6721B73F25E859ED0063DB97 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 678D1E4B25D437B3001F62DC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 678D1E5225D437B3001F62DC;
+			remoteInfo = KampusChat;
+		};
+		678F9B6F25E81CB200F06A43 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 678D1E4B25D437B3001F62DC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 678D1E5225D437B3001F62DC;
+			remoteInfo = KampusChat;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		2F931421364A89B9E21AC864 /* Pods-KampusChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KampusChat.debug.xcconfig"; path = "Target Support Files/Pods-KampusChat/Pods-KampusChat.debug.xcconfig"; sourceTree = "<group>"; };
+		4DB87F055FBCA42ACF374C1F /* Pods-KampusChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KampusChat.release.xcconfig"; path = "Target Support Files/Pods-KampusChat/Pods-KampusChat.release.xcconfig"; sourceTree = "<group>"; };
 		67000E8925D6936500616BDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		67000E8B25D6938D00616BDC /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		67152B1925E2CB53002C78CD /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		67152B1B25E2CDE1002C78CD /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		67152B1F25E2CF9C002C78CD /* TokenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenViewModel.swift; sourceTree = "<group>"; };
 		67169A1725D573B600D2F340 /* SigninViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninViewController.swift; sourceTree = "<group>"; };
-		67169A1925D578B500D2F340 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		67169A2325D5863B00D2F340 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Main.strings; sourceTree = "<group>"; };
-		67169A2A25D5910F00D2F340 /* CodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeViewController.swift; sourceTree = "<group>"; };
 		67169A2D25D5934100D2F340 /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		67169A2F25D59A1200D2F340 /* EmailValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidation.swift; sourceTree = "<group>"; };
+		6721B73A25E859ED0063DB97 /* SigninTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SigninTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6721B73C25E859ED0063DB97 /* SigninTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninTests.swift; sourceTree = "<group>"; };
+		6721B73E25E859ED0063DB97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		67248BF525F909E30095F5AD /* ApiURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiURL.swift; sourceTree = "<group>"; };
 		6733398D25E6CF0F002485DD /* Spinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spinner.swift; sourceTree = "<group>"; };
-		6742564925D6D36A00DAE1D6 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
-		6755B5E725E5883E00549B19 /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
-		6755B5E925E588D900549B19 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
+		673AFCF625F7A2D600995DE1 /* Signin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signin.swift; sourceTree = "<group>"; };
+		673AFCF825F7A31900995DE1 /* SigninViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninViewModel.swift; sourceTree = "<group>"; };
+		673AFCFB25F7A41200995DE1 /* SigninService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninService.swift; sourceTree = "<group>"; };
+		673AFCFE25F7A44C00995DE1 /* TokenProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenProtocol.swift; sourceTree = "<group>"; };
+		673AFD0025F7A87600995DE1 /* ResponseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseProtocol.swift; sourceTree = "<group>"; };
+		673AFD0325F7AA9A00995DE1 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		678D1E5325D437B3001F62DC /* KampusChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KampusChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		678D1E5625D437B3001F62DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		678D1E5825D437B3001F62DC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,11 +82,28 @@
 		678D1E6225D437B4001F62DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		678D1E8F25D44C61001F62DC /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		678F5B1F25DE8B2C003AEEF3 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		678F9B6A25E81CB200F06A43 /* SplashScreenTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SplashScreenTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		67F8397B25DDA15C00BE6EB8 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		844EDEE1EF9D123B23AE4FAD /* Pods_KampusChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KampusChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		6721B73725E859ED0063DB97 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		678D1E5025D437B3001F62DC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A8BDE22FC7803FD4645B8767 /* Pods_KampusChat.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		678F9B6725E81CB200F06A43 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -68,18 +113,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		67152B1225E2BDB0002C78CD /* View */ = {
+		3EF1292505D5484F1D142F15 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				844EDEE1EF9D123B23AE4FAD /* Pods_KampusChat.framework */,
 			);
-			path = View;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		67152B1325E2BE0A002C78CD /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				67152B1B25E2CDE1002C78CD /* Token.swift */,
-				6755B5E725E5883E00549B19 /* Authentication.swift */,
+				673AFCF625F7A2D600995DE1 /* Signin.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -87,8 +133,8 @@
 		67152B1425E2BE10002C78CD /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				67152B1625E2BECB002C78CD /* Home */,
-				67169A1425D56A1200D2F340 /* Authentication */,
+				67F8397B25DDA15C00BE6EB8 /* HomeViewController.swift */,
+				67169A1725D573B600D2F340 /* SigninViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -96,56 +142,60 @@
 		67152B1525E2BE56002C78CD /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				67152B1825E2BF2E002C78CD /* Authentication */,
+				67152B1F25E2CF9C002C78CD /* TokenViewModel.swift */,
+				673AFCF825F7A31900995DE1 /* SigninViewModel.swift */,
 			);
 			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		67152B1625E2BECB002C78CD /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				67F8397B25DDA15C00BE6EB8 /* HomeViewController.swift */,
-			);
-			path = Home;
-			sourceTree = "<group>";
-		};
-		67152B1825E2BF2E002C78CD /* Authentication */ = {
-			isa = PBXGroup;
-			children = (
-				67152B1F25E2CF9C002C78CD /* TokenViewModel.swift */,
-				6755B5E925E588D900549B19 /* AuthenticationViewModel.swift */,
-			);
-			path = Authentication;
-			sourceTree = "<group>";
-		};
-		67169A1425D56A1200D2F340 /* Authentication */ = {
-			isa = PBXGroup;
-			children = (
-				67169A1725D573B600D2F340 /* SigninViewController.swift */,
-				67169A1925D578B500D2F340 /* ForgotPasswordViewController.swift */,
-				67169A2A25D5910F00D2F340 /* CodeViewController.swift */,
-				6742564925D6D36A00DAE1D6 /* ResetPasswordViewController.swift */,
-			);
-			path = Authentication;
 			sourceTree = "<group>";
 		};
 		67169A2C25D5933100D2F340 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				67152B1925E2CB53002C78CD /* Storage.swift */,
+				6733398D25E6CF0F002485DD /* Spinner.swift */,
 				67169A2D25D5934100D2F340 /* Toast.swift */,
 				67169A2F25D59A1200D2F340 /* EmailValidation.swift */,
 				678F5B1F25DE8B2C003AEEF3 /* Log.swift */,
-				67152B1925E2CB53002C78CD /* Storage.swift */,
-				6733398D25E6CF0F002485DD /* Spinner.swift */,
+				67248BF525F909E30095F5AD /* ApiURL.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		6721B73B25E859ED0063DB97 /* SigninTests */ = {
+			isa = PBXGroup;
+			children = (
+				6721B73C25E859ED0063DB97 /* SigninTests.swift */,
+				6721B73E25E859ED0063DB97 /* Info.plist */,
+			);
+			path = SigninTests;
+			sourceTree = "<group>";
+		};
+		673AFCFA25F7A40300995DE1 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				673AFD0325F7AA9A00995DE1 /* ApiManager.swift */,
+				673AFCFB25F7A41200995DE1 /* SigninService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		673AFCFD25F7A43A00995DE1 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				673AFCFE25F7A44C00995DE1 /* TokenProtocol.swift */,
+				673AFD0025F7A87600995DE1 /* ResponseProtocol.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 		678D1E4A25D437B3001F62DC = {
 			isa = PBXGroup;
 			children = (
 				678D1E5525D437B3001F62DC /* KampusChat */,
+				6721B73B25E859ED0063DB97 /* SigninTests */,
 				678D1E5425D437B3001F62DC /* Products */,
+				ADF45944E176E9123A57799A /* Pods */,
+				3EF1292505D5484F1D142F15 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -153,6 +203,8 @@
 			isa = PBXGroup;
 			children = (
 				678D1E5325D437B3001F62DC /* KampusChat.app */,
+				678F9B6A25E81CB200F06A43 /* SplashScreenTests.xctest */,
+				6721B73A25E859ED0063DB97 /* SigninTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -160,10 +212,11 @@
 		678D1E5525D437B3001F62DC /* KampusChat */ = {
 			isa = PBXGroup;
 			children = (
-				67152B1525E2BE56002C78CD /* ViewModel */,
 				67152B1425E2BE10002C78CD /* ViewController */,
+				67152B1525E2BE56002C78CD /* ViewModel */,
 				67152B1325E2BE0A002C78CD /* Model */,
-				67152B1225E2BDB0002C78CD /* View */,
+				673AFCFA25F7A40300995DE1 /* Service */,
+				673AFCFD25F7A43A00995DE1 /* Protocol */,
 				67169A2C25D5933100D2F340 /* Utils */,
 				678D1E5625D437B3001F62DC /* AppDelegate.swift */,
 				678D1E5825D437B3001F62DC /* ViewController.swift */,
@@ -176,16 +229,45 @@
 			path = KampusChat;
 			sourceTree = "<group>";
 		};
+		ADF45944E176E9123A57799A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2F931421364A89B9E21AC864 /* Pods-KampusChat.debug.xcconfig */,
+				4DB87F055FBCA42ACF374C1F /* Pods-KampusChat.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		6721B73925E859ED0063DB97 /* SigninTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6721B74125E859ED0063DB97 /* Build configuration list for PBXNativeTarget "SigninTests" */;
+			buildPhases = (
+				6721B73625E859ED0063DB97 /* Sources */,
+				6721B73725E859ED0063DB97 /* Frameworks */,
+				6721B73825E859ED0063DB97 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6721B74025E859ED0063DB97 /* PBXTargetDependency */,
+			);
+			name = SigninTests;
+			productName = SigninTests;
+			productReference = 6721B73A25E859ED0063DB97 /* SigninTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		678D1E5225D437B3001F62DC /* KampusChat */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 678D1E6525D437B4001F62DC /* Build configuration list for PBXNativeTarget "KampusChat" */;
 			buildPhases = (
+				D444347C82A4CFF15069E1D2 /* [CP] Check Pods Manifest.lock */,
 				678D1E4F25D437B3001F62DC /* Sources */,
 				678D1E5025D437B3001F62DC /* Frameworks */,
 				678D1E5125D437B3001F62DC /* Resources */,
+				DBFAD821B9F969E10D88A81A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -195,6 +277,24 @@
 			productName = KampusChat;
 			productReference = 678D1E5325D437B3001F62DC /* KampusChat.app */;
 			productType = "com.apple.product-type.application";
+		};
+		678F9B6925E81CB200F06A43 /* SplashScreenTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 678F9B7325E81CB200F06A43 /* Build configuration list for PBXNativeTarget "SplashScreenTests" */;
+			buildPhases = (
+				678F9B6625E81CB200F06A43 /* Sources */,
+				678F9B6725E81CB200F06A43 /* Frameworks */,
+				678F9B6825E81CB200F06A43 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				678F9B7025E81CB200F06A43 /* PBXTargetDependency */,
+			);
+			name = SplashScreenTests;
+			productName = SplashScreenTests;
+			productReference = 678F9B6A25E81CB200F06A43 /* SplashScreenTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -209,8 +309,16 @@
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = KampusChat;
 				TargetAttributes = {
+					6721B73925E859ED0063DB97 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 678D1E5225D437B3001F62DC;
+					};
 					678D1E5225D437B3001F62DC = {
 						CreatedOnToolsVersion = 10.1;
+					};
+					678F9B6925E81CB200F06A43 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 678D1E5225D437B3001F62DC;
 					};
 				};
 			};
@@ -229,11 +337,20 @@
 			projectRoot = "";
 			targets = (
 				678D1E5225D437B3001F62DC /* KampusChat */,
+				678F9B6925E81CB200F06A43 /* SplashScreenTests */,
+				6721B73925E859ED0063DB97 /* SigninTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		6721B73825E859ED0063DB97 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		678D1E5125D437B3001F62DC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -245,33 +362,117 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		678F9B6825E81CB200F06A43 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		D444347C82A4CFF15069E1D2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KampusChat-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DBFAD821B9F969E10D88A81A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KampusChat/Pods-KampusChat-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KampusChat/Pods-KampusChat-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		6721B73625E859ED0063DB97 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6721B73D25E859ED0063DB97 /* SigninTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		678D1E4F25D437B3001F62DC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				67152B2025E2CF9C002C78CD /* TokenViewModel.swift in Sources */,
-				67169A1A25D578B500D2F340 /* ForgotPasswordViewController.swift in Sources */,
 				678F5B2025DE8B2C003AEEF3 /* Log.swift in Sources */,
+				673AFCFF25F7A44C00995DE1 /* TokenProtocol.swift in Sources */,
 				67169A3025D59A1200D2F340 /* EmailValidation.swift in Sources */,
+				673AFCF925F7A31900995DE1 /* SigninViewModel.swift in Sources */,
 				67169A2E25D5934100D2F340 /* Toast.swift in Sources */,
 				67152B1A25E2CB53002C78CD /* Storage.swift in Sources */,
-				6755B5EA25E588D900549B19 /* AuthenticationViewModel.swift in Sources */,
 				6733398E25E6CF0F002485DD /* Spinner.swift in Sources */,
-				6742564A25D6D36A00DAE1D6 /* ResetPasswordViewController.swift in Sources */,
-				6755B5E825E5883E00549B19 /* Authentication.swift in Sources */,
+				67248BF625F909E30095F5AD /* ApiURL.swift in Sources */,
 				67F8397C25DDA15C00BE6EB8 /* HomeViewController.swift in Sources */,
 				678D1E5925D437B3001F62DC /* ViewController.swift in Sources */,
+				673AFD0425F7AA9A00995DE1 /* ApiManager.swift in Sources */,
 				678D1E5725D437B3001F62DC /* AppDelegate.swift in Sources */,
-				67169A2B25D5910F00D2F340 /* CodeViewController.swift in Sources */,
 				67152B1C25E2CDE1002C78CD /* Token.swift in Sources */,
+				673AFD0125F7A87600995DE1 /* ResponseProtocol.swift in Sources */,
+				673AFCFC25F7A41200995DE1 /* SigninService.swift in Sources */,
 				67169A1825D573B600D2F340 /* SigninViewController.swift in Sources */,
+				673AFCF725F7A2D600995DE1 /* Signin.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		678F9B6625E81CB200F06A43 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6721B74025E859ED0063DB97 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 678D1E5225D437B3001F62DC /* KampusChat */;
+			targetProxy = 6721B73F25E859ED0063DB97 /* PBXContainerItemProxy */;
+		};
+		678F9B7025E81CB200F06A43 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 678D1E5225D437B3001F62DC /* KampusChat */;
+			targetProxy = 678F9B6F25E81CB200F06A43 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		67000E8825D6936500616BDC /* Localizable.strings */ = {
@@ -304,6 +505,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		6721B74225E859ED0063DB97 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8V322885PV;
+				INFOPLIST_FILE = SigninTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = kampuschat.SigninTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KampusChat.app/KampusChat";
+			};
+			name = Debug;
+		};
+		6721B74325E859ED0063DB97 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8V322885PV;
+				INFOPLIST_FILE = SigninTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = kampuschat.SigninTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KampusChat.app/KampusChat";
+			};
+			name = Release;
+		};
 		678D1E6325D437B4001F62DC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -424,6 +665,7 @@
 		};
 		678D1E6625D437B4001F62DC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F931421364A89B9E21AC864 /* Pods-KampusChat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -436,12 +678,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = kampuschat.KampusChat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		678D1E6725D437B4001F62DC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4DB87F055FBCA42ACF374C1F /* Pods-KampusChat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -454,13 +697,62 @@
 				PRODUCT_BUNDLE_IDENTIFIER = kampuschat.KampusChat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		678F9B7125E81CB200F06A43 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8V322885PV;
+				INFOPLIST_FILE = SplashScreenTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = kampuschat.SplashScreenTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KampusChat.app/KampusChat";
+			};
+			name = Debug;
+		};
+		678F9B7225E81CB200F06A43 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8V322885PV;
+				INFOPLIST_FILE = SplashScreenTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = kampuschat.SplashScreenTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KampusChat.app/KampusChat";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		6721B74125E859ED0063DB97 /* Build configuration list for PBXNativeTarget "SigninTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6721B74225E859ED0063DB97 /* Debug */,
+				6721B74325E859ED0063DB97 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		678D1E4E25D437B3001F62DC /* Build configuration list for PBXProject "KampusChat" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -475,6 +767,15 @@
 			buildConfigurations = (
 				678D1E6625D437B4001F62DC /* Debug */,
 				678D1E6725D437B4001F62DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		678F9B7325E81CB200F06A43 /* Build configuration list for PBXNativeTarget "SplashScreenTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				678F9B7125E81CB200F06A43 /* Debug */,
+				678F9B7225E81CB200F06A43 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

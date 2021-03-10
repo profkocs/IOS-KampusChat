@@ -10,15 +10,15 @@ import UIKit
 
 class Toast{
     
-    func showToast(message: String, font: UIFont,viewController:UIViewController) {
+    func showToast(message: String,viewController:UIViewController) {
         let toastLabel = UILabel()
-        toastLabel.backgroundColor = UIColor.red.withAlphaComponent(0.6)
+        toastLabel.backgroundColor = UIColor.red
         toastLabel.textColor = .white
-        toastLabel.font = font
+        toastLabel.font = UIFont.systemFont(ofSize: 15)
         toastLabel.textAlignment = .center
         toastLabel.text = message
         toastLabel.alpha = 1.0
-        toastLabel.layer.cornerRadius = 20
+        toastLabel.layer.cornerRadius = 10
         toastLabel.clipsToBounds = true
         
         let maxWidthPercentage: CGFloat = 0.8
@@ -26,7 +26,7 @@ class Toast{
         var titleSize = toastLabel.sizeThatFits(maxTitleSize)
         titleSize.width += 20
         titleSize.height += 10
-        toastLabel.frame = CGRect(x: viewController.view.frame.size.width / 2 - titleSize.width / 2, y: viewController.view.frame.size.height - 100, width: titleSize.width+10, height: titleSize.height+10)
+        toastLabel.frame = CGRect(x: 50, y: viewController.view.frame.size.height - 100, width: viewController.view.frame.size.width-100, height: titleSize.height+25)
         
         viewController.view.addSubview(toastLabel)
         

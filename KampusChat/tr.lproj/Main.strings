@@ -1,25 +1,25 @@
 
 
 /* Class = "UITextField";  */
-"0C8-2m-45Z.placeholder" = "Kullanıcı Adı";
+"gUv-9z-TrV.placeholder" = "Kullanıcı Adı";
 
 /* Class = "UIButton";  */
-"C2t-i8-oS3.normalTitle" = "Giriş Yap";
+"wg9-K1-39k.normalTitle" = "Giriş Yap";
 
 /* Class = "UIButton";  */
-"KYI-g8-vlc.normalTitle" = "Kayıt Ol";
+"anq-w3-lks.normalTitle" = "Kayıt Ol";
 
 /* Class = "UIButton";  */
-"RUo-oM-PC6.normalTitle" = "Şifremi Unuttum";
+"o9B-vP-BLh.normalTitle" = "Şifremi Unuttum!";
 
 /* Class = "UILabel";  */
-"q5V-f5-Y5A.text" = "Bir Hesabın Yok mu?";
+"Q1h-3t-Zkk.text" = "Bir Hesabın Yok mu?";
 
 /* Class = "UITextField";  */
-"reu-2c-5e9.placeholder" = "Şifre";
+"5q9-qw-dp0.placeholder" = "Şifre";
 
 /* Class = "UILabel";  */
-"vVf-cl-3I6.text" = "Yeniden Hoşgeldin";
+"ohC-MZ-QLJ.text" = "Yeniden Hoşgeldin";
 
 /* Class = "UILabel";  */
 "9dg-tp-xNZ.text" = "Şifreni mi Unuttun?";

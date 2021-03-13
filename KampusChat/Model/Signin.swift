@@ -7,7 +7,7 @@
 //
 
 import Foundation
-class Signin:Codable{
+struct Signin:Codable{
     
     var username:String
     var password:String

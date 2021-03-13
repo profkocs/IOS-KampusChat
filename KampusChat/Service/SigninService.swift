@@ -8,21 +8,30 @@
 
 import Foundation
 import SwiftyJSON
-class SigninService: ResponseProtocol{
+class SigninService{
     
     var manager:ApiManager?
     var model:Signin
-    var tokenProtocol:TokenProtocol
-    
     var request:URLRequest
     
-    init(model:Signin,tokenProtocol:TokenProtocol){
+    var token:Token?{
+        didSet{
+            bindServiceToViewModel()
+        }
+    }
+    var error:String?
+    
+    var bindServiceToViewModel: (()->()) = {}
+    
+    init(model:Signin){
         self.model = model
-        self.tokenProtocol = tokenProtocol
         request = URLRequest(url: URL(string: ApiURL.createToken)!)
         setRequest()
-        manager = ApiManager(request: self.request, responseProtocol: self)
+        manager = ApiManager(request: self.request)
         manager!.startTask()
+        manager?.bindManagerToService = {
+            self.handleResponse(data: self.manager?.data, response: (self.manager?.response)!, error: self.manager?.error)
+        }
     }
 
     private func setRequest(){
@@ -47,11 +56,11 @@ class SigninService: ResponseProtocol{
     func handleResponse(data: Data?, response:URLResponse, error:Error?) {
         Log.info(key: "SigninService handleResponse()",value: "is Begun")
         
-        
         if(error != nil){
             // External Error
             Log.info(key: "SigninService handleResponse()",value: "external error")
-            tokenProtocol.handleTokenResponse(token:nil, error: NSLocalizedString("error_something_went_wrong", comment: "") )
+            self.error = NSLocalizedString("error_something_went_wrong", comment: "")
+            self.token = nil
             return
         }
         
@@ -59,14 +68,15 @@ class SigninService: ResponseProtocol{
         if((200...299).contains((httpResponse?.statusCode)!)){
          // Success
             Log.info(key: "SigninService handleResponse()",value: "success")
-            tokenProtocol.handleTokenResponse(token: JSONTokenParsing(data:data!), error: nil)
+            self.error = nil
+            self.token = JSONTokenParsing(data:data!)
             return
         }
         
         // Failed
         Log.info(key: "SigninService handleResponse()",value: "failed")
-        tokenProtocol.handleTokenResponse(token: nil, error: JSONErrorParsing(data: data!))
-        
+        self.error = JSONErrorParsing(data: data!)
+        self.token = nil
     }
     
     private func JSONTokenParsing(data:Data?)->Token?{

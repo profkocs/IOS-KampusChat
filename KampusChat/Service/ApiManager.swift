@@ -13,25 +13,33 @@ import Foundation
 class ApiManager{
     
     
-    var responseProtocol:ResponseProtocol
     var task:URLSessionDataTask?
     var request:URLRequest
     
-    init(request:URLRequest,responseProtocol:ResponseProtocol){
+    var data:Data?{
+        didSet{
+            self.bindManagerToService()
+        }
+    }
+    var response:URLResponse?
+    var error:Error?
+    
+    var bindManagerToService: (()->()) = {}
+    
+    init(request:URLRequest){
         self.request = request
-        self.responseProtocol =  responseProtocol
     }
     
     func startTask(){
         Log.info(key: "Task", value: "is Begun")
         task =  URLSession.shared.dataTask(with:request) { (data, response, error) in
             Log.info(key: "task", value: "is done")
-            self.responseProtocol.handleResponse(data: data, response: response!, error: error)
-            
+            self.error = error
+            self.response = response
+            self.data = data
         }
         task!.resume()
     }
-    
     
     public func stopTask(){
         task!.cancel()

@@ -11,6 +11,10 @@ class ApiURL{
     
     
     static let createToken = "https://kampuschatdeneme.herokuapp.com/api/Auth/CreateToken"
+    static let getCities = "https://kampuschatdeneme.herokuapp.com/api/SignUp/GetCities/id"
+    static let getUniversities = ""
+    static let getFaculties = ""
+    static let getDeparments = ""
     
     
     

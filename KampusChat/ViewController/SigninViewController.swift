@@ -8,26 +8,31 @@
 
 import UIKit
 
-class SigninViewController: UIViewController, TokenProtocol {
-  
-    
+class SigninViewController: UIViewController {
    
     
+  
     @IBOutlet weak var textFieldUsername: UITextField!
     
     @IBOutlet weak var textFieldPassword: UITextField!
     
     @IBOutlet weak var buttonSignin: UIButton!
     
+    @IBOutlet weak var labelUsernameError: UILabel!
+    
+    @IBOutlet weak var labelPasswordError: UILabel!
+    
+    var buttonUsernameFlag = false
+    var buttonPasswordFlag = false
+    
     private let spinner = SpinnerViewController()
     private let tokenViewModel = TokenViewModel(token: nil)
+
     
     private let toast = Toast()
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
     }
     
     // View processes
@@ -43,37 +48,76 @@ class SigninViewController: UIViewController, TokenProtocol {
         buttonSignin.alpha = 1
         buttonSignin.showsTouchWhenHighlighted = true;
     }
+   
     
     @IBAction func textFieldUsernameEditingDidChange(_ sender: Any) {
-        Log.info(key: "textFieldUsernameEditingDidChange()",value: "is Begun")
-        if(validateInputs()){
+        
+        Log.info(key: "textFieldPasswordEditingDidChange()",value: "is Begun")
+        if(isUsernameValid() && buttonPasswordFlag){
             setButtonasActive()
         }else{
             setButtonasDefault()
         }
     }
     
-    @IBAction func textFieldPasswordEditingDidChange(_ sender: Any) {
+
+    @IBAction func textFieldPasswordDidEnd(_ sender: Any) {
+        
         Log.info(key: "textFieldPasswordEditingDidChange()",value: "is Begun")
-        if(validateInputs()){
+        if(isPasswordValid() && buttonUsernameFlag){
             setButtonasActive()
         }else{
             setButtonasDefault()
         }
     }
-  
-    private func validateInputs()->Bool{
+    
+    private func isUsernameValid()->Bool{
         
-        if(textFieldUsername.text!.count > 2  && textFieldPassword.text!.count > 0){
+        if(textFieldUsername.text!.count > 2){
+            removeUsernameErrorMessage()
+            buttonUsernameFlag = true
             return true
         }
-
-        return false
+            buttonUsernameFlag = false
+            showUsernameErrorMessage()
+           return false
     }
+    
+    private func isPasswordValid()->Bool{
+        if(textFieldPassword.text!.count > 0){
+            removePasswordErrorMessage()
+            buttonPasswordFlag = true
+            return true
+        }
+            buttonPasswordFlag = false
+            showPasswordErrorMessage()
+            return false
+        
+        
+    }
+    
+    
+    private func showUsernameErrorMessage(){
+        labelUsernameError.text = NSLocalizedString("invalid_username", comment: "")
+    }
+    
+    private func removeUsernameErrorMessage(){
+        labelUsernameError.text = ""
+    }
+    
+    private func showPasswordErrorMessage(){
+        labelPasswordError.text = NSLocalizedString("invalid_password", comment: "")
+    }
+    
+    private func removePasswordErrorMessage(){
+        labelPasswordError.text = ""
+    }
+    
+    
     
     // Progress Dialog
     private func startSpinner(){
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+        DispatchQueue.main.async {
             Log.info(key: "startSpinner()",value: "is Begun")
             self.spinner.showSpinner(viewController: self)
             
@@ -82,7 +126,7 @@ class SigninViewController: UIViewController, TokenProtocol {
     }
     
     private func stopSpinner(){
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+        DispatchQueue.main.async {
             Log.info(key: "stopSpinner()",value: "is Begun")
             self.spinner.disableSpinner()
             
@@ -92,7 +136,7 @@ class SigninViewController: UIViewController, TokenProtocol {
     
     // Failed Signing in.
     private func showToastMessage(message:String){
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+        DispatchQueue.main.async {
             Log.info(key: "showToastMessage()",value: "is Begun")
             let toast = Toast()
             toast.showToast(message:message,viewController:self)
@@ -106,42 +150,42 @@ class SigninViewController: UIViewController, TokenProtocol {
         Log.info(key: "showForgotPassword()",value: "is Begun")
     }
     
-    
     @IBAction func actionSignin(_ sender: Any) {
         Log.info(key: "actionSignin()",value: "is Begun")
         startSpinner()
         signin()
     }
     
+ 
     
-    @IBAction func showSignup(_ sender: Any) {
-        Log.info(key: "showSignup()",value: "is Begun")
-        //self.performSegue(withIdentifier: "signinTO", sender: nil)
+    private func showHomeScreen(){
+        DispatchQueue.main.async {
+            Log.info(key: "showHome()",value: "is Begun")
+            self.performSegue(withIdentifier: "signinTOhome", sender: nil)
+        }
     }
     
-    private func showHome(){
-        Log.info(key: "showHome()",value: "is Begun")
-        self.performSegue(withIdentifier: "signinTOhome", sender: nil)
-    }
     
-    private func showCode(){
-        Log.info(key: "showCode()",value: "is Begun")
-        self.performSegue(withIdentifier: "signinTOcode", sender: nil)
+    
+    private func showEmailScreen(){
+        DispatchQueue.main.async {
+            Log.info(key: "showEmail()",value: "is Begun")
+            self.performSegue(withIdentifier: "signinTOemail", sender: nil)
+        }
     }
     
     
     private func signin(){
         Log.info(key: "SigninViewController signin()",value: "is Begun")
+        
         let signin = Signin(username: textFieldUsername.text!, password: textFieldPassword.text!)
-        _ = SigninViewModel(model:signin, tokenProtocol: self)
-    }
+        let viewModel = SigninViewModel(model:signin)
         
-    func handleTokenResponse(token:Token?,error:String?) {
-        Log.info(key: "SigninViewController getTokenResponse()",value: "is Begun")
-        
-        self.token = token
-        self.error = error
-        
+        //Binding
+        viewModel.bindViewModelToController = {
+            self.token = viewModel.token
+            self.error = viewModel.error
+        }
     }
     
     
@@ -157,14 +201,26 @@ class SigninViewController: UIViewController, TokenProtocol {
     
     private var error:String?{
         didSet{
+            
             if(self.error != nil){
-                showToastMessage(message: self.error!)
+                
+                if(self.error == "Email adresinizi doğrulamalısınız"){
+                    
+                    showToastMessage(message: NSLocalizedString("error_confirm_email", comment: ""))
+                    showEmailScreen()
+                    
+                }else if(self.error == "Kullanıcı adı veya şifre hatalı"){
+                    
+                  showToastMessage(message: NSLocalizedString("error_invalid_credentials", comment: ""))
+                
+                }else{
+                    showToastMessage(message: NSLocalizedString("error_something_went_wrong", comment: ""))
+                }
+                
             }
             
         }
     }
-    
-
     
     
 }

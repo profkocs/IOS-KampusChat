@@ -14,8 +14,15 @@
 		67169A1825D573B600D2F340 /* SigninViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67169A1725D573B600D2F340 /* SigninViewController.swift */; };
 		67169A2E25D5934100D2F340 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67169A2D25D5934100D2F340 /* Toast.swift */; };
 		67169A3025D59A1200D2F340 /* EmailValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67169A2F25D59A1200D2F340 /* EmailValidation.swift */; };
+		671BBC7C25FBF50D00608501 /* Signup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671BBC7B25FBF50D00608501 /* Signup.swift */; };
+		67207F8125FBA0D600BC812B /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67207F8025FBA0D600BC812B /* City.swift */; };
+		67207F8525FBA21800BC812B /* CitiesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67207F8425FBA21800BC812B /* CitiesViewModel.swift */; };
+		67207F8725FBA2AB00BC812B /* CitiesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67207F8625FBA2AB00BC812B /* CitiesService.swift */; };
+		67207F8925FBB15600BC812B /* CityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67207F8825FBB15600BC812B /* CityViewController.swift */; };
 		6721B73D25E859ED0063DB97 /* SigninTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6721B73C25E859ED0063DB97 /* SigninTests.swift */; };
 		67248BF625F909E30095F5AD /* ApiURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67248BF525F909E30095F5AD /* ApiURL.swift */; };
+		673031DC25FC2B5900978CE4 /* SignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673031DB25FC2B5900978CE4 /* SignupViewModel.swift */; };
+		673031DE25FC2EEB00978CE4 /* UniversitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673031DD25FC2EEB00978CE4 /* UniversitiesViewController.swift */; };
 		6733398E25E6CF0F002485DD /* Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6733398D25E6CF0F002485DD /* Spinner.swift */; };
 		673AFCF725F7A2D600995DE1 /* Signin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673AFCF625F7A2D600995DE1 /* Signin.swift */; };
 		673AFCF925F7A31900995DE1 /* SigninViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673AFCF825F7A31900995DE1 /* SigninViewModel.swift */; };
@@ -29,6 +36,7 @@
 		678D1E5E25D437B4001F62DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 678D1E5D25D437B4001F62DC /* Assets.xcassets */; };
 		678D1E6125D437B4001F62DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 678D1E5F25D437B4001F62DC /* LaunchScreen.storyboard */; };
 		678F5B2025DE8B2C003AEEF3 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678F5B1F25DE8B2C003AEEF3 /* Log.swift */; };
+		67E8949025FD7625002C3379 /* CitiesProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E8948F25FD7625002C3379 /* CitiesProtocol.swift */; };
 		67F8397C25DDA15C00BE6EB8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F8397B25DDA15C00BE6EB8 /* HomeViewController.swift */; };
 		A8BDE22FC7803FD4645B8767 /* Pods_KampusChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 844EDEE1EF9D123B23AE4FAD /* Pods_KampusChat.framework */; };
 /* End PBXBuildFile section */
@@ -62,10 +70,17 @@
 		67169A2325D5863B00D2F340 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Main.strings; sourceTree = "<group>"; };
 		67169A2D25D5934100D2F340 /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		67169A2F25D59A1200D2F340 /* EmailValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidation.swift; sourceTree = "<group>"; };
+		671BBC7B25FBF50D00608501 /* Signup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signup.swift; sourceTree = "<group>"; };
+		67207F8025FBA0D600BC812B /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		67207F8425FBA21800BC812B /* CitiesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesViewModel.swift; sourceTree = "<group>"; };
+		67207F8625FBA2AB00BC812B /* CitiesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesService.swift; sourceTree = "<group>"; };
+		67207F8825FBB15600BC812B /* CityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityViewController.swift; sourceTree = "<group>"; };
 		6721B73A25E859ED0063DB97 /* SigninTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SigninTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6721B73C25E859ED0063DB97 /* SigninTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninTests.swift; sourceTree = "<group>"; };
 		6721B73E25E859ED0063DB97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		67248BF525F909E30095F5AD /* ApiURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiURL.swift; sourceTree = "<group>"; };
+		673031DB25FC2B5900978CE4 /* SignupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewModel.swift; sourceTree = "<group>"; };
+		673031DD25FC2EEB00978CE4 /* UniversitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversitiesViewController.swift; sourceTree = "<group>"; };
 		6733398D25E6CF0F002485DD /* Spinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spinner.swift; sourceTree = "<group>"; };
 		673AFCF625F7A2D600995DE1 /* Signin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signin.swift; sourceTree = "<group>"; };
 		673AFCF825F7A31900995DE1 /* SigninViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninViewModel.swift; sourceTree = "<group>"; };
@@ -83,6 +98,7 @@
 		678D1E8F25D44C61001F62DC /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		678F5B1F25DE8B2C003AEEF3 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		678F9B6A25E81CB200F06A43 /* SplashScreenTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SplashScreenTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		67E8948F25FD7625002C3379 /* CitiesProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesProtocol.swift; sourceTree = "<group>"; };
 		67F8397B25DDA15C00BE6EB8 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		844EDEE1EF9D123B23AE4FAD /* Pods_KampusChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KampusChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -126,6 +142,8 @@
 			children = (
 				67152B1B25E2CDE1002C78CD /* Token.swift */,
 				673AFCF625F7A2D600995DE1 /* Signin.swift */,
+				67207F8025FBA0D600BC812B /* City.swift */,
+				671BBC7B25FBF50D00608501 /* Signup.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -135,6 +153,8 @@
 			children = (
 				67F8397B25DDA15C00BE6EB8 /* HomeViewController.swift */,
 				67169A1725D573B600D2F340 /* SigninViewController.swift */,
+				67207F8825FBB15600BC812B /* CityViewController.swift */,
+				673031DD25FC2EEB00978CE4 /* UniversitiesViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -144,6 +164,8 @@
 			children = (
 				67152B1F25E2CF9C002C78CD /* TokenViewModel.swift */,
 				673AFCF825F7A31900995DE1 /* SigninViewModel.swift */,
+				67207F8425FBA21800BC812B /* CitiesViewModel.swift */,
+				673031DB25FC2B5900978CE4 /* SignupViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -175,6 +197,7 @@
 			children = (
 				673AFD0325F7AA9A00995DE1 /* ApiManager.swift */,
 				673AFCFB25F7A41200995DE1 /* SigninService.swift */,
+				67207F8625FBA2AB00BC812B /* CitiesService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -184,6 +207,7 @@
 			children = (
 				673AFCFE25F7A44C00995DE1 /* TokenProtocol.swift */,
 				673AFD0025F7A87600995DE1 /* ResponseProtocol.swift */,
+				67E8948F25FD7625002C3379 /* CitiesProtocol.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -432,6 +456,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				67152B2025E2CF9C002C78CD /* TokenViewModel.swift in Sources */,
+				673031DC25FC2B5900978CE4 /* SignupViewModel.swift in Sources */,
 				678F5B2025DE8B2C003AEEF3 /* Log.swift in Sources */,
 				673AFCFF25F7A44C00995DE1 /* TokenProtocol.swift in Sources */,
 				67169A3025D59A1200D2F340 /* EmailValidation.swift in Sources */,
@@ -439,15 +464,22 @@
 				67169A2E25D5934100D2F340 /* Toast.swift in Sources */,
 				67152B1A25E2CB53002C78CD /* Storage.swift in Sources */,
 				6733398E25E6CF0F002485DD /* Spinner.swift in Sources */,
+				67207F8725FBA2AB00BC812B /* CitiesService.swift in Sources */,
 				67248BF625F909E30095F5AD /* ApiURL.swift in Sources */,
 				67F8397C25DDA15C00BE6EB8 /* HomeViewController.swift in Sources */,
+				67207F8525FBA21800BC812B /* CitiesViewModel.swift in Sources */,
 				678D1E5925D437B3001F62DC /* ViewController.swift in Sources */,
+				671BBC7C25FBF50D00608501 /* Signup.swift in Sources */,
 				673AFD0425F7AA9A00995DE1 /* ApiManager.swift in Sources */,
 				678D1E5725D437B3001F62DC /* AppDelegate.swift in Sources */,
 				67152B1C25E2CDE1002C78CD /* Token.swift in Sources */,
+				67E8949025FD7625002C3379 /* CitiesProtocol.swift in Sources */,
 				673AFD0125F7A87600995DE1 /* ResponseProtocol.swift in Sources */,
+				67207F8925FBB15600BC812B /* CityViewController.swift in Sources */,
 				673AFCFC25F7A41200995DE1 /* SigninService.swift in Sources */,
+				673031DE25FC2EEB00978CE4 /* UniversitiesViewController.swift in Sources */,
 				67169A1825D573B600D2F340 /* SigninViewController.swift in Sources */,
+				67207F8125FBA0D600BC812B /* City.swift in Sources */,
 				673AFCF725F7A2D600995DE1 /* Signin.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -678,7 +710,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = kampuschat.KampusChat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -697,7 +729,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = kampuschat.KampusChat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

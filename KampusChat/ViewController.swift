@@ -11,13 +11,12 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var labelStatus: UILabel!
-    let tokenViewModel = TokenViewModel(token: nil)
+    let tokenViewModel = TokenViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tokenViewModel.initilazeToken()
         determineDirection()
-      
     }
 
    

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Token:Codable{
+struct Token:Codable{
     
     
     var user_id:String

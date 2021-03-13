@@ -14,17 +14,11 @@ class TokenViewModel{
     var token:Token?
     let storage = Storage()
     
-    /**
-     @Params token:Token?
-     Description: If token is nil, that means it will be initialized from Storage.
-                  If it is not nill, that means it will be initialized from where the instance created.
-     */
+    init(){}
     
     init(token:Token?){
-        
-        if(token != nil){
-            self.token = token!
-        }
+        self.token = token
+
     }
     
     var user_id: String?{
@@ -47,7 +41,16 @@ class TokenViewModel{
         return token?.refreshTokenExpiration
     }
     
+    /**
+ 
+     func initilazeToken
+     description: Getting token which is created after user siggned in and saved to the storage.
+     
+    */
+    
+    
     func initilazeToken(){
+        
         let user_id = storage.getString(key: keys[0])
         
         if user_id != nil {
@@ -56,6 +59,7 @@ class TokenViewModel{
             let accessTokenExpiration = storage.getString(key: keys[2])!
             let refreshToken = storage.getString(key: keys[3])!
             let refreshTokenExpiration = storage.getString(key: keys[4])!
+            
             token = Token(user_id: user_id!, accessToken: accessToken, accessTokenExpiration: accessTokenExpiration, refreshToken: refreshToken, refreshTokenExpiration: refreshTokenExpiration)
         }
     }

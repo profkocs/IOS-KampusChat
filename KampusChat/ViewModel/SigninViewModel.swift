@@ -11,13 +11,25 @@ class SigninViewModel{
     
     
     var model:Signin
-    var tokenProtocol:TokenProtocol
     var service:SigninService;
     
-    init(model:Signin, tokenProtocol:TokenProtocol) {
+    var token:Token?{
+        didSet{
+            bindViewModelToController()
+        }
+    }
+    
+    var error:String?
+    
+    var bindViewModelToController: (()->()) = {}
+    
+    init(model:Signin) {
         self.model = model
-        self.tokenProtocol = tokenProtocol
-        service = SigninService(model:self.model, tokenProtocol: self.tokenProtocol)
+        service = SigninService(model:self.model)
+        service.bindServiceToViewModel = {
+            self.error = self.service.error
+            self.token = self.service.token
+        }
     }
     
     var username:String{

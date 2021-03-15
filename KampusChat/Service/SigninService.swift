@@ -25,7 +25,7 @@ class SigninService{
     
     init(model:Signin){
         self.model = model
-        request = URLRequest(url: URL(string: ApiURL.createToken)!)
+        request = URLRequest(url: URL(string: ApiURL.createToken.rawValue)!)
         setRequest()
         manager = ApiManager(request: self.request)
         manager!.startTask()

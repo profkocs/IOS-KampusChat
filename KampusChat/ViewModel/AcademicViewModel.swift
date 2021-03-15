@@ -7,12 +7,10 @@
 //
 
 import Foundation
-class CitiesViewModel{
+class AcademicViewModel{
     
-    
-
-    var service:CitiesService
-    var cities:[City]?{
+    var service:AcademicService
+    var datas:[Academic]?{
         didSet{
             bindViewModelToController()
         }
@@ -22,13 +20,13 @@ class CitiesViewModel{
     var bindViewModelToController: (()->()) = {}
     
     
-    init(){
-        service = CitiesService()
+    init(url:String, key:String){
+        service = AcademicService(url: url, key: key)
         service.bindServiceToViewModel = {
             self.error = self.service.error
-            self.cities = self.service.cities
+            self.datas = self.service.datas
         }
     }
-  
     
+
 }

@@ -7,7 +7,7 @@
 //
 
 import Foundation
-struct City{
+struct Academic{
     
     var id:Int
     var name:String

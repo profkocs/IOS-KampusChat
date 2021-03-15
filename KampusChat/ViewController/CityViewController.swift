@@ -13,11 +13,11 @@ class CityViewController: UIViewController{
     
     
     @IBOutlet weak var tableViewCities: UITableView!
-    var cities:[City]? = []
+    var cities:[Academic]? = []
     let toast = Toast()
     let spinner = SpinnerViewController()
     var signupViewModel:SignupViewModel!
-    var citiesViewModel = CitiesViewModel()
+    var viewModel = AcademicViewModel(url:ApiURL.cities.rawValue, key: AcademicKeys.city.rawValue)
    
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,8 +26,8 @@ class CityViewController: UIViewController{
         tableViewCities.delegate = self
         tableViewCities.dataSource = self
         showSpinner()
-        citiesViewModel.bindViewModelToController = {
-            self.handleCitiesResponse(cities: self.citiesViewModel.cities, error: self.citiesViewModel.error)
+        viewModel.bindViewModelToController = {
+            self.handleCitiesResponse(cities: self.viewModel.datas, error: self.viewModel.error)
         }
     }
     
@@ -46,7 +46,7 @@ class CityViewController: UIViewController{
     }
     
     
-    func handleCitiesResponse(cities: [City]?, error: String?) {
+    func handleCitiesResponse(cities: [Academic]?, error: String?) {
         
         if(error == nil && cities != nil){
             self.cities = cities

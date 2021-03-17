@@ -12,8 +12,9 @@ enum ApiURL: String{
     
     case createToken = "https://kampuschatdeneme.herokuapp.com/api/Auth/CreateToken"
     case cities = "https://kampuschatdeneme.herokuapp.com/api/SignUp/GetCities/id"
-    case universities = "s"
-    case faculties = "d"
-    case departments = "a"
+    case universities = "https://kampuschatdeneme.herokuapp.com/api/SignUp/GetUniversities/id"
+    case faculties = "https://kampuschatdeneme.herokuapp.com/api/SignUp/GetFaculties/id"
+    case departments = "https://kampuschatdeneme.herokuapp.com/api/SignUp/GetDepartments/id"
+    case createUser = "https://kampuschatdeneme.herokuapp.com/api/SignUp/CreateUser"
     
 }

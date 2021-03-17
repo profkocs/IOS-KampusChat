@@ -21,7 +21,6 @@ class SpinnerViewController: UIViewController {
         spinner.translatesAutoresizingMaskIntoConstraints = false
         spinner.startAnimating()
         view.addSubview(spinner)
-        
         spinner.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         spinner.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
     }
@@ -33,17 +32,17 @@ class SpinnerViewController: UIViewController {
         
         // add the spinner view controller
         viewController.addChild(child!)
-        child!.view.frame = viewController.view.frame
+        child?.view.frame = viewController.view.frame
         viewController.view.addSubview(child!.view)
-        child!.didMove(toParent: viewController)
+        child?.didMove(toParent: viewController)
         
     }
     
     func disableSpinner(){
         Log.info(key: "disableSpinner()", value: "is Begun")
-        child!.willMove(toParent: nil)
-        child!.view.removeFromSuperview()
-        child!.removeFromParent()
+        child?.willMove(toParent: nil)
+        child?.view.removeFromSuperview()
+        child?.removeFromParent()
     }
     
     

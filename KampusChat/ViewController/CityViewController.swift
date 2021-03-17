@@ -32,7 +32,7 @@ class CityViewController: UIViewController{
     }
     
     private func showSpinner(){
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+        DispatchQueue.main.async{
             Log.info(key: "showSpinner",value: "is Begun")
             self.spinner.showSpinner(viewController: self)
         }
@@ -52,11 +52,17 @@ class CityViewController: UIViewController{
             self.cities = cities
             updateTable()
         }else{
-            toast.showToast(message: NSLocalizedString("error_something_went_wrong", comment: ""), viewController: self)
+            showToastMessage()
         }
         
         stopSpinner()
         
+    }
+    
+    private func showToastMessage(){
+        DispatchQueue.main.async {
+            self.toast.showToast(message: NSLocalizedString("error_something_went_wrong", comment: ""), viewController: self)
+        }
     }
     
     private func updateTable(){
@@ -67,7 +73,6 @@ class CityViewController: UIViewController{
     }
     
     private func selectRow(row:Int){
-        
         var signup = Signup()
         signup.city_id = cities![row].id
         signupViewModel = SignupViewModel(signup: signup)
@@ -79,10 +84,10 @@ class CityViewController: UIViewController{
     }
     
     
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-     if let university = segue.destination as? UniversitiesViewController {
-        university.signupViewModel = self.signupViewModel
+        if let university = segue.destination as? UniversityViewController {
+            university.signupViewModel = self.signupViewModel
         }
      }
     

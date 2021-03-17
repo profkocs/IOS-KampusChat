@@ -14,6 +14,8 @@
 		67169A1825D573B600D2F340 /* SigninViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67169A1725D573B600D2F340 /* SigninViewController.swift */; };
 		67169A2E25D5934100D2F340 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67169A2D25D5934100D2F340 /* Toast.swift */; };
 		67169A3025D59A1200D2F340 /* EmailValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67169A2F25D59A1200D2F340 /* EmailValidation.swift */; };
+		671777FE2601457F00F7B8D0 /* FacultyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671777FD2601457F00F7B8D0 /* FacultyViewController.swift */; };
+		6717780226014CD900F7B8D0 /* UniversityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6717780126014CD900F7B8D0 /* UniversityViewController.swift */; };
 		671BBC7C25FBF50D00608501 /* Signup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671BBC7B25FBF50D00608501 /* Signup.swift */; };
 		67207F8125FBA0D600BC812B /* Academic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67207F8025FBA0D600BC812B /* Academic.swift */; };
 		67207F8525FBA21800BC812B /* AcademicViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67207F8425FBA21800BC812B /* AcademicViewModel.swift */; };
@@ -22,7 +24,6 @@
 		6721B73D25E859ED0063DB97 /* SigninTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6721B73C25E859ED0063DB97 /* SigninTests.swift */; };
 		67248BF625F909E30095F5AD /* ApiURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67248BF525F909E30095F5AD /* ApiURL.swift */; };
 		673031DC25FC2B5900978CE4 /* SignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673031DB25FC2B5900978CE4 /* SignupViewModel.swift */; };
-		673031DE25FC2EEB00978CE4 /* UniversitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673031DD25FC2EEB00978CE4 /* UniversitiesViewController.swift */; };
 		6733398E25E6CF0F002485DD /* Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6733398D25E6CF0F002485DD /* Spinner.swift */; };
 		673AFCF725F7A2D600995DE1 /* Signin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673AFCF625F7A2D600995DE1 /* Signin.swift */; };
 		673AFCF925F7A31900995DE1 /* SigninViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673AFCF825F7A31900995DE1 /* SigninViewModel.swift */; };
@@ -36,6 +37,8 @@
 		678D1E5E25D437B4001F62DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 678D1E5D25D437B4001F62DC /* Assets.xcassets */; };
 		678D1E6125D437B4001F62DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 678D1E5F25D437B4001F62DC /* LaunchScreen.storyboard */; };
 		678F5B2025DE8B2C003AEEF3 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678F5B1F25DE8B2C003AEEF3 /* Log.swift */; };
+		67DF1AC22602B78B0045816A /* DepartmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67DF1AC12602B78B0045816A /* DepartmentViewController.swift */; };
+		67DF1AC42602C32C0045816A /* CreateUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67DF1AC32602C32C0045816A /* CreateUserViewController.swift */; };
 		67F8397C25DDA15C00BE6EB8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F8397B25DDA15C00BE6EB8 /* HomeViewController.swift */; };
 		A8BDE22FC7803FD4645B8767 /* Pods_KampusChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 844EDEE1EF9D123B23AE4FAD /* Pods_KampusChat.framework */; };
 /* End PBXBuildFile section */
@@ -69,6 +72,8 @@
 		67169A2325D5863B00D2F340 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Main.strings; sourceTree = "<group>"; };
 		67169A2D25D5934100D2F340 /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		67169A2F25D59A1200D2F340 /* EmailValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidation.swift; sourceTree = "<group>"; };
+		671777FD2601457F00F7B8D0 /* FacultyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacultyViewController.swift; sourceTree = "<group>"; };
+		6717780126014CD900F7B8D0 /* UniversityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversityViewController.swift; sourceTree = "<group>"; };
 		671BBC7B25FBF50D00608501 /* Signup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signup.swift; sourceTree = "<group>"; };
 		67207F8025FBA0D600BC812B /* Academic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Academic.swift; sourceTree = "<group>"; };
 		67207F8425FBA21800BC812B /* AcademicViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcademicViewModel.swift; sourceTree = "<group>"; };
@@ -79,7 +84,6 @@
 		6721B73E25E859ED0063DB97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		67248BF525F909E30095F5AD /* ApiURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiURL.swift; sourceTree = "<group>"; };
 		673031DB25FC2B5900978CE4 /* SignupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewModel.swift; sourceTree = "<group>"; };
-		673031DD25FC2EEB00978CE4 /* UniversitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversitiesViewController.swift; sourceTree = "<group>"; };
 		6733398D25E6CF0F002485DD /* Spinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spinner.swift; sourceTree = "<group>"; };
 		673AFCF625F7A2D600995DE1 /* Signin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signin.swift; sourceTree = "<group>"; };
 		673AFCF825F7A31900995DE1 /* SigninViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninViewModel.swift; sourceTree = "<group>"; };
@@ -97,6 +101,8 @@
 		678D1E8F25D44C61001F62DC /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		678F5B1F25DE8B2C003AEEF3 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		678F9B6A25E81CB200F06A43 /* SplashScreenTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SplashScreenTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		67DF1AC12602B78B0045816A /* DepartmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentViewController.swift; sourceTree = "<group>"; };
+		67DF1AC32602C32C0045816A /* CreateUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserViewController.swift; sourceTree = "<group>"; };
 		67F8397B25DDA15C00BE6EB8 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		844EDEE1EF9D123B23AE4FAD /* Pods_KampusChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KampusChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -153,7 +159,10 @@
 				67F8397B25DDA15C00BE6EB8 /* HomeViewController.swift */,
 				67169A1725D573B600D2F340 /* SigninViewController.swift */,
 				67207F8825FBB15600BC812B /* CityViewController.swift */,
-				673031DD25FC2EEB00978CE4 /* UniversitiesViewController.swift */,
+				6717780126014CD900F7B8D0 /* UniversityViewController.swift */,
+				671777FD2601457F00F7B8D0 /* FacultyViewController.swift */,
+				67DF1AC12602B78B0045816A /* DepartmentViewController.swift */,
+				67DF1AC32602C32C0045816A /* CreateUserViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -455,6 +464,7 @@
 				67152B2025E2CF9C002C78CD /* TokenViewModel.swift in Sources */,
 				673031DC25FC2B5900978CE4 /* SignupViewModel.swift in Sources */,
 				678F5B2025DE8B2C003AEEF3 /* Log.swift in Sources */,
+				67DF1AC42602C32C0045816A /* CreateUserViewController.swift in Sources */,
 				67169A3025D59A1200D2F340 /* EmailValidation.swift in Sources */,
 				673AFCF925F7A31900995DE1 /* SigninViewModel.swift in Sources */,
 				6776C53F25FEC8500080D505 /* University.swift in Sources */,
@@ -464,19 +474,21 @@
 				67207F8725FBA2AB00BC812B /* AcademicService.swift in Sources */,
 				67248BF625F909E30095F5AD /* ApiURL.swift in Sources */,
 				67F8397C25DDA15C00BE6EB8 /* HomeViewController.swift in Sources */,
+				67DF1AC22602B78B0045816A /* DepartmentViewController.swift in Sources */,
 				67207F8525FBA21800BC812B /* AcademicViewModel.swift in Sources */,
 				678D1E5925D437B3001F62DC /* ViewController.swift in Sources */,
 				671BBC7C25FBF50D00608501 /* Signup.swift in Sources */,
 				673AFD0425F7AA9A00995DE1 /* ApiManager.swift in Sources */,
+				6717780226014CD900F7B8D0 /* UniversityViewController.swift in Sources */,
 				678D1E5725D437B3001F62DC /* AppDelegate.swift in Sources */,
 				6776C54125FED7D50080D505 /* AcademicKeys.swift in Sources */,
 				67152B1C25E2CDE1002C78CD /* Token.swift in Sources */,
 				67207F8925FBB15600BC812B /* CityViewController.swift in Sources */,
 				673AFCFC25F7A41200995DE1 /* SigninService.swift in Sources */,
-				673031DE25FC2EEB00978CE4 /* UniversitiesViewController.swift in Sources */,
 				67169A1825D573B600D2F340 /* SigninViewController.swift in Sources */,
 				67207F8125FBA0D600BC812B /* Academic.swift in Sources */,
 				673AFCF725F7A2D600995DE1 /* Signin.swift in Sources */,
+				671777FE2601457F00F7B8D0 /* FacultyViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

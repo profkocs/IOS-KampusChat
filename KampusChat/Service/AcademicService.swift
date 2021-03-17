@@ -82,27 +82,33 @@ class AcademicService{
     
     
     private func JSONParsing(data:Data?)->[Academic]?{
+        Log.info(key: "Academic Service JSONParsing",value: "is Begun")
         let json = try? JSON(data: data!)
         var jsonDatas = json!["data"]
-        
-        if(key == AcademicKeys.faculty2.rawValue){
-            jsonDatas = json!["data"][AcademicKeys.faculty.rawValue]
-        }
-        
         var datas:[Academic] = []
         
+    
         for item in jsonDatas[key]{
+            var temp:Academic!
             
-            let temp = Academic(id:item.1["id"].intValue,name: item.1["name"].stringValue)
+            if(key == AcademicKeys.faculty.rawValue){
+                // For faculty
+                temp = Academic(id:item.1[AcademicKeys.faculty2.rawValue]["id"].intValue,name: item.1[AcademicKeys.faculty2.rawValue]["name"].stringValue)
+            }else {
+                temp = Academic(id:item.1["id"].intValue,name: item.1["name"].stringValue)
+            }
+        
             datas.append(temp)
             
         }
-        
+        print(datas.count)
+         Log.info(key: "Academic Service JSONParsing",value: "is over")
         return datas
     }
     
     private func JSONErrorParsing(data:Data?)->String?{
         let json = try? JSON(data: data!)
+        Log.info(key: "Academic Service JSONErrorParsing",value: "is over")
         return json?["error"]["errors"][0].stringValue
     }
     

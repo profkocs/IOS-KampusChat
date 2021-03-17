@@ -23,6 +23,7 @@ class AcademicViewModel{
     init(url:String, key:String){
         service = AcademicService(url: url, key: key)
         service.bindServiceToViewModel = {
+            Log.info(key: "AcademicViewModel service bind", value: "is Begun")
             self.error = self.service.error
             self.datas = self.service.datas
         }

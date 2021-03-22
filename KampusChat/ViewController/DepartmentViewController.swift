@@ -36,7 +36,7 @@ class DepartmentViewController: UIViewController {
     }
     
     private func prepareURL(){
-        let faculty_id = signupViewModel.signup.faculty_id!
+        let faculty_id = signupViewModel.signup.facultyId!
         url = ApiURL.departments.rawValue + "?id=" + String(faculty_id)
     }
     
@@ -82,12 +82,12 @@ class DepartmentViewController: UIViewController {
     }
     
     private func selectRow(row:Int){
-        signupViewModel.signup.department_id = departments![row].id
+        signupViewModel.signup.departmentId = departments![row].id
         
     }
     
-    private func showCreateUser(){
-        self.performSegue(withIdentifier: "departmentsTOcreateUser", sender: nil)
+    private func showPasswordScreen(){
+        self.performSegue(withIdentifier: "departmentsTOpassword", sender: nil)
     }
     
     
@@ -95,9 +95,9 @@ class DepartmentViewController: UIViewController {
         
         Log.info(key: "prepare", value: "is Begun")
         
-        // Sending Data To CreateViewController
-        if let createUser = segue.destination as? CreateUserViewController {
-            createUser.signupViewModel = self.signupViewModel
+        // Sending Data To PasswordViewController
+        if let password = segue.destination as? PasswordViewController {
+            password.signupViewModel = self.signupViewModel
             
         }
         
@@ -116,7 +116,7 @@ extension DepartmentViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectRow(row:indexPath.row)
-        showCreateUser()
+        showPasswordScreen()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

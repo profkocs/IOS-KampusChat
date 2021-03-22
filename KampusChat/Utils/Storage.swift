@@ -8,29 +8,35 @@
 
 import Foundation
 
+
+/**
+ Class Responsibility -> Storing All Types of Data And Giving Back to  Classes When They Need Data.
+*/
+
 class Storage{
     
     private let defaults = UserDefaults.standard
     
     init(){}
     
-    public func saveString(object:String, key:String){
-        Log.info(key: "saveString()", value: "is Begun")
-        defaults.set(object,forKey:key)
+    public func saveString(data:String, key:String){
+        Log.info(key: "saveString", value: "is Begun")
+        defaults.set(data, forKey: key)
     }
     
-    public func saveInt(object:Int64, key:String){
-        Log.info(key: "saveInt()", value: "is Begun")
-        defaults.set(object, forKey: key)
+    public func saveObject(data:Any, key:String){
+        Log.info(key: "saveObject", value: "is Begun")
+        defaults.set(data, forKey: key)
     }
     
     public func getString(key:String) -> String?{
         Log.info(key: "getString()", value: "is Begun")
-        return (defaults.object(forKey: key) as! String?)
+        return defaults.string(forKey:key)
     }
     
-    public func getInt(key:String) -> Int64?{
-        Log.info(key: "getInt()", value: "is Begun")
-        return defaults.object(forKey: key) as! Int64?
+    public func getObject(key:String) -> Any?{
+        Log.info(key: "getObject()", value: "is Begun")
+        return defaults.object(forKey:key)
     }
+    
 }

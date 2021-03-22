@@ -7,12 +7,17 @@
 //
 
 import Foundation
-struct Signup{
+struct Signup:Codable{
     
-    var city_id:Int?
-    var university_id:Int?
-    var faculty_id:Int?
-    var department_id:Int?
+    var countryId = 1
+    var cityId:Int?
+    var universityId:Int?
+    var facultyId:Int?
+    var departmentId:Int?
+    var password:String?
+    var userName:String?
+    var email:String?
+    
     
     init(){}
     

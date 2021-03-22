@@ -74,7 +74,7 @@ class CityViewController: UIViewController{
     
     private func selectRow(row:Int){
         var signup = Signup()
-        signup.city_id = cities![row].id
+        signup.cityId = cities![row].id
         signupViewModel = SignupViewModel(signup: signup)
         
     }

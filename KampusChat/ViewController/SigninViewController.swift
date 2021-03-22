@@ -22,11 +22,8 @@ class SigninViewController: UIViewController {
     
     @IBOutlet weak var labelPasswordError: UILabel!
     
-    var buttonUsernameFlag = false
-    var buttonPasswordFlag = false
-    
     private let spinner = SpinnerViewController()
-    private let tokenViewModel = TokenViewModel(token: nil)
+    private let tokenViewModel = TokenViewModel(token: nil,storage: Storage())
 
     
     private let toast = Toast()
@@ -34,86 +31,6 @@ class SigninViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
-    // View processes
-    private func setButtonasDefault(){
-        Log.info(key: "setButtonasDefault()",value: "is Begun")
-        buttonSignin.isEnabled = false;
-        buttonSignin.alpha = 0.5
-    }
-    
-    private func setButtonasActive(){
-        Log.info(key: "setButtonasActive()",value: "is Begun")
-        buttonSignin.isEnabled = true;
-        buttonSignin.alpha = 1
-        buttonSignin.showsTouchWhenHighlighted = true;
-    }
-   
-    
-    @IBAction func textFieldUsernameEditingDidChange(_ sender: Any) {
-        
-        Log.info(key: "textFieldPasswordEditingDidChange()",value: "is Begun")
-        if(isUsernameValid() && buttonPasswordFlag){
-            setButtonasActive()
-        }else{
-            setButtonasDefault()
-        }
-    }
-    
-
-    @IBAction func textFieldPasswordDidEnd(_ sender: Any) {
-        
-        Log.info(key: "textFieldPasswordEditingDidChange()",value: "is Begun")
-        if(isPasswordValid() && buttonUsernameFlag){
-            setButtonasActive()
-        }else{
-            setButtonasDefault()
-        }
-    }
-    
-    private func isUsernameValid()->Bool{
-        
-        if(textFieldUsername.text!.count > 2){
-            removeUsernameErrorMessage()
-            buttonUsernameFlag = true
-            return true
-        }
-            buttonUsernameFlag = false
-            showUsernameErrorMessage()
-           return false
-    }
-    
-    private func isPasswordValid()->Bool{
-        if(textFieldPassword.text!.count > 0){
-            removePasswordErrorMessage()
-            buttonPasswordFlag = true
-            return true
-        }
-            buttonPasswordFlag = false
-            showPasswordErrorMessage()
-            return false
-        
-        
-    }
-    
-    
-    private func showUsernameErrorMessage(){
-        labelUsernameError.text = NSLocalizedString("invalid_username", comment: "")
-    }
-    
-    private func removeUsernameErrorMessage(){
-        labelUsernameError.text = ""
-    }
-    
-    private func showPasswordErrorMessage(){
-        labelPasswordError.text = NSLocalizedString("invalid_password", comment: "")
-    }
-    
-    private func removePasswordErrorMessage(){
-        labelPasswordError.text = ""
-    }
-    
-    
     
     // Progress Dialog
     private func startSpinner(){
@@ -145,6 +62,39 @@ class SigninViewController: UIViewController {
     }
     
     
+    private func validateInputs() -> Bool{
+        
+        var response = true
+        
+        // Username
+        let usernameValidation = UsernameValidation.validateUsername(username: textFieldUsername.text!)
+        
+        if(usernameValidation != "OK"){
+            
+            labelUsernameError.text = usernameValidation
+            response = false
+            
+        } else{
+            labelUsernameError.text = ""
+        }
+        
+        // Password
+        
+        let passwordValidation = PasswordValidation.validatePassword(password: textFieldPassword.text!, passwordAgain: nil)
+        
+        if(passwordValidation != "OK"){
+            
+            labelPasswordError.text = passwordValidation
+            response = false
+            
+        } else{
+            labelPasswordError.text = ""
+        }
+        
+        return response
+      
+    }
+    
     
     @IBAction func showForgotPassword(_ sender: Any) {
         Log.info(key: "showForgotPassword()",value: "is Begun")
@@ -152,8 +102,12 @@ class SigninViewController: UIViewController {
     
     @IBAction func actionSignin(_ sender: Any) {
         Log.info(key: "actionSignin()",value: "is Begun")
-        startSpinner()
-        signin()
+        
+        if validateInputs(){
+            startSpinner()
+            signin()
+        }
+        
     }
     
  
@@ -193,7 +147,7 @@ class SigninViewController: UIViewController {
         didSet{
             stopSpinner()
             if(self.token != nil){
-                let viewModel = TokenViewModel(token:self.token)
+                let viewModel = TokenViewModel(token:self.token,storage: Storage())
                 viewModel.saveToken()
             }
         }

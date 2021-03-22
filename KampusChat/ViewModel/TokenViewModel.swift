@@ -8,72 +8,70 @@
 
 import Foundation
 
+
+/*
+ Class Responsibility -> Handling All Token Processes.
+*/
+
 class TokenViewModel{
     
-    let keys = ["user_id","accessToken","accessTokenExpiration","refreshToken","refreshTokenExpiration"]
-    var token:Token?
-    let storage = Storage()
+    private var token:Token?
+    private var storage:Storage
     
-    init(){}
-    
-    init(token:Token?){
+    init(token:Token?, storage:Storage){
         self.token = token
-
+        self.storage = storage
     }
     
-    var user_id: String?{
-        return token?.user_id
-    }
+    /*
+    closure -> tokenModel
+    description: A bridge for other classes to reach the token variable.
+    responsibility: to initialize token from storage and return it.
+     */
     
-    var accessToken: String?{
-        return token?.accessToken
-    }
-    
-    var accessTokenExpiration: String?{
-        return token?.accessTokenExpiration
-    }
-    
-    var refreshToken:String?{
-        return token?.refreshToken
-    }
-    
-    var refreshTokenExpiration:String?{
-        return token?.refreshTokenExpiration
-    }
-    
-    /**
- 
-     func initilazeToken
-     description: Getting token which is created after user siggned in and saved to the storage.
-     
-    */
-    
-    
-    func initilazeToken(){
+    var tokenModel:Token?{
         
-        let user_id = storage.getString(key: keys[0])
+        if(token == nil){
+            
+            let data = storage.getObject(key: StorageKeys.token.rawValue)
+            token = decodeToken(data: data as! Data)
         
-        if user_id != nil {
-            
-            let accessToken = storage.getString(key: keys[1])!
-            let accessTokenExpiration = storage.getString(key: keys[2])!
-            let refreshToken = storage.getString(key: keys[3])!
-            let refreshTokenExpiration = storage.getString(key: keys[4])!
-            
-            token = Token(user_id: user_id!, accessToken: accessToken, accessTokenExpiration: accessTokenExpiration, refreshToken: refreshToken, refreshTokenExpiration: refreshTokenExpiration)
+        }
+        
+        return self.token
+    }
+        
+    func saveToken() {
+        
+        Log.info(key: "saveToken()", value: "is Begun")
+        
+        let encodedToken = encodeToken()
+       
+        if(encodedToken != nil){
+            storage.saveObject(data:encodedToken as Any, key: StorageKeys.token.rawValue)
         }
     }
     
-    func saveToken(){
-        storage.saveString(object: self.user_id!, key: keys[0])
-        storage.saveString(object: self.accessToken!, key: keys[1])
-        storage.saveString(object: self.accessTokenExpiration!, key: keys[2])
-        storage.saveString(object: self.refreshToken!, key: keys[3])
-        storage.saveString(object: self.refreshTokenExpiration!, key: keys[4])
+    
+    func encodeToken()-> Data?{
+        
+        do{
+            return try JSONEncoder().encode(token)
+        } catch {
+            return nil
+        }
+        
     }
     
-    
-    
+    func decodeToken(data:Data) -> Token? {
+        
+        do{
+            return try JSONDecoder().decode(Token.self, from: data)
+        } catch {
+            return nil
+        }
+    }
+  
     
     
     

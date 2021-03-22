@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		67000E8A25D6936500616BDC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 67000E8825D6936500616BDC /* Localizable.strings */; };
+		67071FED26066477005028C3 /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67071FEC26066477005028C3 /* PasswordViewController.swift */; };
+		67071FEF260666A2005028C3 /* PasswordValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67071FEE260666A2005028C3 /* PasswordValidation.swift */; };
+		67071FF126068D65005028C3 /* UsernameValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67071FF026068D65005028C3 /* UsernameValidation.swift */; };
+		67071FF5260697D4005028C3 /* Cons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67071FF4260697D4005028C3 /* Cons.swift */; };
+		67071FF7260699FA005028C3 /* SignupService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67071FF6260699FA005028C3 /* SignupService.swift */; };
+		67071FF92606A175005028C3 /* SignupResponseEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67071FF82606A175005028C3 /* SignupResponseEnum.swift */; };
 		67152B1A25E2CB53002C78CD /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67152B1925E2CB53002C78CD /* Storage.swift */; };
 		67152B1C25E2CDE1002C78CD /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67152B1B25E2CDE1002C78CD /* Token.swift */; };
 		67152B2025E2CF9C002C78CD /* TokenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67152B1F25E2CF9C002C78CD /* TokenViewModel.swift */; };
@@ -29,7 +35,6 @@
 		673AFCF925F7A31900995DE1 /* SigninViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673AFCF825F7A31900995DE1 /* SigninViewModel.swift */; };
 		673AFCFC25F7A41200995DE1 /* SigninService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673AFCFB25F7A41200995DE1 /* SigninService.swift */; };
 		673AFD0425F7AA9A00995DE1 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673AFD0325F7AA9A00995DE1 /* ApiManager.swift */; };
-		6776C53F25FEC8500080D505 /* University.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6776C53E25FEC8500080D505 /* University.swift */; };
 		6776C54125FED7D50080D505 /* AcademicKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6776C54025FED7D50080D505 /* AcademicKeys.swift */; };
 		678D1E5725D437B3001F62DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678D1E5625D437B3001F62DC /* AppDelegate.swift */; };
 		678D1E5925D437B3001F62DC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678D1E5825D437B3001F62DC /* ViewController.swift */; };
@@ -39,6 +44,9 @@
 		678F5B2025DE8B2C003AEEF3 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678F5B1F25DE8B2C003AEEF3 /* Log.swift */; };
 		67DF1AC22602B78B0045816A /* DepartmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67DF1AC12602B78B0045816A /* DepartmentViewController.swift */; };
 		67DF1AC42602C32C0045816A /* CreateUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67DF1AC32602C32C0045816A /* CreateUserViewController.swift */; };
+		67EFECDC26077A6000D2AEA1 /* Pros.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EFECDB26077A6000D2AEA1 /* Pros.swift */; };
+		67F084E326094C22000D0793 /* StorageKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F084E226094C22000D0793 /* StorageKeys.swift */; };
+		67F084E726095AB8000D0793 /* SegueKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F084E626095AB8000D0793 /* SegueKeys.swift */; };
 		67F8397C25DDA15C00BE6EB8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F8397B25DDA15C00BE6EB8 /* HomeViewController.swift */; };
 		A8BDE22FC7803FD4645B8767 /* Pods_KampusChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 844EDEE1EF9D123B23AE4FAD /* Pods_KampusChat.framework */; };
 /* End PBXBuildFile section */
@@ -65,6 +73,12 @@
 		4DB87F055FBCA42ACF374C1F /* Pods-KampusChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KampusChat.release.xcconfig"; path = "Target Support Files/Pods-KampusChat/Pods-KampusChat.release.xcconfig"; sourceTree = "<group>"; };
 		67000E8925D6936500616BDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		67000E8B25D6938D00616BDC /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		67071FEC26066477005028C3 /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
+		67071FEE260666A2005028C3 /* PasswordValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordValidation.swift; sourceTree = "<group>"; };
+		67071FF026068D65005028C3 /* UsernameValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsernameValidation.swift; sourceTree = "<group>"; };
+		67071FF4260697D4005028C3 /* Cons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cons.swift; sourceTree = "<group>"; };
+		67071FF6260699FA005028C3 /* SignupService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupService.swift; sourceTree = "<group>"; };
+		67071FF82606A175005028C3 /* SignupResponseEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupResponseEnum.swift; sourceTree = "<group>"; };
 		67152B1925E2CB53002C78CD /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		67152B1B25E2CDE1002C78CD /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		67152B1F25E2CF9C002C78CD /* TokenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenViewModel.swift; sourceTree = "<group>"; };
@@ -89,7 +103,6 @@
 		673AFCF825F7A31900995DE1 /* SigninViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninViewModel.swift; sourceTree = "<group>"; };
 		673AFCFB25F7A41200995DE1 /* SigninService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninService.swift; sourceTree = "<group>"; };
 		673AFD0325F7AA9A00995DE1 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
-		6776C53E25FEC8500080D505 /* University.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = University.swift; sourceTree = "<group>"; };
 		6776C54025FED7D50080D505 /* AcademicKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcademicKeys.swift; sourceTree = "<group>"; };
 		678D1E5325D437B3001F62DC /* KampusChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KampusChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		678D1E5625D437B3001F62DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -103,6 +116,9 @@
 		678F9B6A25E81CB200F06A43 /* SplashScreenTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SplashScreenTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		67DF1AC12602B78B0045816A /* DepartmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentViewController.swift; sourceTree = "<group>"; };
 		67DF1AC32602C32C0045816A /* CreateUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserViewController.swift; sourceTree = "<group>"; };
+		67EFECDB26077A6000D2AEA1 /* Pros.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pros.swift; sourceTree = "<group>"; };
+		67F084E226094C22000D0793 /* StorageKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageKeys.swift; sourceTree = "<group>"; };
+		67F084E626095AB8000D0793 /* SegueKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueKeys.swift; sourceTree = "<group>"; };
 		67F8397B25DDA15C00BE6EB8 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		844EDEE1EF9D123B23AE4FAD /* Pods_KampusChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KampusChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -148,7 +164,6 @@
 				673AFCF625F7A2D600995DE1 /* Signin.swift */,
 				67207F8025FBA0D600BC812B /* Academic.swift */,
 				671BBC7B25FBF50D00608501 /* Signup.swift */,
-				6776C53E25FEC8500080D505 /* University.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -162,6 +177,7 @@
 				6717780126014CD900F7B8D0 /* UniversityViewController.swift */,
 				671777FD2601457F00F7B8D0 /* FacultyViewController.swift */,
 				67DF1AC12602B78B0045816A /* DepartmentViewController.swift */,
+				67071FEC26066477005028C3 /* PasswordViewController.swift */,
 				67DF1AC32602C32C0045816A /* CreateUserViewController.swift */,
 			);
 			path = ViewController;
@@ -186,6 +202,8 @@
 				67169A2D25D5934100D2F340 /* Toast.swift */,
 				67169A2F25D59A1200D2F340 /* EmailValidation.swift */,
 				678F5B1F25DE8B2C003AEEF3 /* Log.swift */,
+				67071FEE260666A2005028C3 /* PasswordValidation.swift */,
+				67071FF026068D65005028C3 /* UsernameValidation.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -205,6 +223,7 @@
 				673AFD0325F7AA9A00995DE1 /* ApiManager.swift */,
 				673AFCFB25F7A41200995DE1 /* SigninService.swift */,
 				67207F8625FBA2AB00BC812B /* AcademicService.swift */,
+				67071FF6260699FA005028C3 /* SignupService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -214,6 +233,9 @@
 			children = (
 				67248BF525F909E30095F5AD /* ApiURL.swift */,
 				6776C54025FED7D50080D505 /* AcademicKeys.swift */,
+				67071FF82606A175005028C3 /* SignupResponseEnum.swift */,
+				67F084E226094C22000D0793 /* StorageKeys.swift */,
+				67F084E626095AB8000D0793 /* SegueKeys.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -255,6 +277,8 @@
 				678D1E5F25D437B4001F62DC /* LaunchScreen.storyboard */,
 				678D1E6225D437B4001F62DC /* Info.plist */,
 				67000E8825D6936500616BDC /* Localizable.strings */,
+				67071FF4260697D4005028C3 /* Cons.swift */,
+				67EFECDB26077A6000D2AEA1 /* Pros.swift */,
 			);
 			path = KampusChat;
 			sourceTree = "<group>";
@@ -461,16 +485,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67071FF126068D65005028C3 /* UsernameValidation.swift in Sources */,
 				67152B2025E2CF9C002C78CD /* TokenViewModel.swift in Sources */,
 				673031DC25FC2B5900978CE4 /* SignupViewModel.swift in Sources */,
+				67071FF7260699FA005028C3 /* SignupService.swift in Sources */,
+				67071FED26066477005028C3 /* PasswordViewController.swift in Sources */,
+				67EFECDC26077A6000D2AEA1 /* Pros.swift in Sources */,
 				678F5B2025DE8B2C003AEEF3 /* Log.swift in Sources */,
 				67DF1AC42602C32C0045816A /* CreateUserViewController.swift in Sources */,
 				67169A3025D59A1200D2F340 /* EmailValidation.swift in Sources */,
 				673AFCF925F7A31900995DE1 /* SigninViewModel.swift in Sources */,
-				6776C53F25FEC8500080D505 /* University.swift in Sources */,
 				67169A2E25D5934100D2F340 /* Toast.swift in Sources */,
 				67152B1A25E2CB53002C78CD /* Storage.swift in Sources */,
 				6733398E25E6CF0F002485DD /* Spinner.swift in Sources */,
+				67071FEF260666A2005028C3 /* PasswordValidation.swift in Sources */,
 				67207F8725FBA2AB00BC812B /* AcademicService.swift in Sources */,
 				67248BF625F909E30095F5AD /* ApiURL.swift in Sources */,
 				67F8397C25DDA15C00BE6EB8 /* HomeViewController.swift in Sources */,
@@ -480,13 +508,17 @@
 				671BBC7C25FBF50D00608501 /* Signup.swift in Sources */,
 				673AFD0425F7AA9A00995DE1 /* ApiManager.swift in Sources */,
 				6717780226014CD900F7B8D0 /* UniversityViewController.swift in Sources */,
+				67F084E726095AB8000D0793 /* SegueKeys.swift in Sources */,
+				67071FF92606A175005028C3 /* SignupResponseEnum.swift in Sources */,
 				678D1E5725D437B3001F62DC /* AppDelegate.swift in Sources */,
 				6776C54125FED7D50080D505 /* AcademicKeys.swift in Sources */,
 				67152B1C25E2CDE1002C78CD /* Token.swift in Sources */,
 				67207F8925FBB15600BC812B /* CityViewController.swift in Sources */,
+				67071FF5260697D4005028C3 /* Cons.swift in Sources */,
 				673AFCFC25F7A41200995DE1 /* SigninService.swift in Sources */,
 				67169A1825D573B600D2F340 /* SigninViewController.swift in Sources */,
 				67207F8125FBA0D600BC812B /* Academic.swift in Sources */,
+				67F084E326094C22000D0793 /* StorageKeys.swift in Sources */,
 				673AFCF725F7A2D600995DE1 /* Signin.swift in Sources */,
 				671777FE2601457F00F7B8D0 /* FacultyViewController.swift in Sources */,
 			);

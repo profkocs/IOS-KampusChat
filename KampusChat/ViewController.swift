@@ -8,40 +8,49 @@
 
 import UIKit
 
+/**
+ Class Responsibility -> Checking token to determine direction(Signin or Home)
+*/
+
 class ViewController: UIViewController {
     
+   
     @IBOutlet weak var labelStatus: UILabel!
-    let tokenViewModel = TokenViewModel()
+    
+    var tokenViewModel = TokenViewModel(token: nil, storage: Storage())
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tokenViewModel.initilazeToken()
         determineDirection()
     }
 
    
      private func determineDirection(){
+        
         Log.info(key: "determineDirection()",value: "is Begun")
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             
-            if(self.tokenViewModel.token != nil){
+            if (self.tokenViewModel.tokenModel != nil) {
+                
                 self.showHome()
-            }else{
+                
+            } else{
+            
                 self.showSignin()
             }
             
         }
         
     }
-    
+
     
     private func showHome(){
-        self.performSegue(withIdentifier: "viewTOhome", sender: nil)
+        self.performSegue(withIdentifier: SegueKeys.splash_to_home.rawValue, sender: nil)
     }
     
     private func showSignin(){
-        self.performSegue(withIdentifier: "viewTOsignin", sender: nil)
+        self.performSegue(withIdentifier: SegueKeys.splash_to_signin.rawValue, sender: nil)
     }
     
   

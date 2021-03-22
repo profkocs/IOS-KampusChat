@@ -1,5 +1,5 @@
 
-
+// Sign in
 /* Class = "UITextField";  */
 "pcY-Lj-kYF.placeholder" = "Kullanıcı Adı";
 
@@ -20,6 +20,8 @@
 
 /* Class = "UILabel";  */
 "8xv-9c-nFZ.text" = "Yeniden Hoşgeldin";
+
+
 
 /* Class = "UILabel";  */
 "9dg-tp-xNZ.text" = "Şifreni mi Unuttun?";
@@ -63,6 +65,8 @@
 /* Class = "UIButton"; */
 "Sj4-Bz-X1r.normalTitle" = "Yenile";
 
+// Sign Up
+
 "nBh-0V-zgj.normalTitle" = "Geri dönmek mi istiyorsun?";
 
 "fgq-ys-BUL.text" = "Üniversite Şehrini Seç";
@@ -73,6 +77,22 @@
 
 "gVm-dF-vyK.text" = "Bölümünü Seç";
 
+"iPd-NG-BU4.text" = "Şifren";
 
+"v7f-ib-GaA.placeholder" = "Şifre";
+
+"Cww-35-BEU.placeholder" = "Şifre Tekrarı";
+
+"3cd-5D-233.normalTitle" = "İleri";
+
+"oDA-NV-GYS.text" = "Kayıt Ol";
+
+"GgE-oJ-2kQ.placeholder" = "Kullanıcı Adı";
+
+"ofd-4d-zEv.placeholder" = "Okul Mail Adresi";
+
+"gxV-IX-26Q.normalTitle" = "Tamamla";
+
+"c7F-nz-wlZ.normalTitle" = "Bir hesabın var mı? Giriş Yap";
 
 

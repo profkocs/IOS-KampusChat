@@ -17,7 +17,7 @@ class ViewController: UIViewController {
    
     @IBOutlet weak var labelStatus: UILabel!
     
-    var tokenViewModel = TokenViewModel(token: nil, storage: Storage())
+    var tokenViewModel = TokenViewModel(token: nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()

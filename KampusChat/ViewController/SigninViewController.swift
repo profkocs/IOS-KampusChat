@@ -8,173 +8,283 @@
 
 import UIKit
 
+/**
+Class Responsibility ->
+ 
+ - Showing and Removing Spinner
+ - Showing Toast Message
+ - Handling UIButton Action
+ - Validating Username and Password
+ - Starting Signin Action
+ - Getting Data and Error From SignViewModel
+ - Showing Error Message
+ - Creating TokenViewModel and Sending Data To it.
+ - Directing another screen.
+ 
+ 
+Class Dependencies ->
+ 
+ - SpinnerViewController
+ - Toast
+ - SigninViewModel
+ - TokenViewModel
+*/
+
+
 class SigninViewController: UIViewController {
    
-    
-  
-    @IBOutlet weak var textFieldUsername: UITextField!
-    
-    @IBOutlet weak var textFieldPassword: UITextField!
-    
-    @IBOutlet weak var buttonSignin: UIButton!
-    
-    @IBOutlet weak var labelUsernameError: UILabel!
-    
-    @IBOutlet weak var labelPasswordError: UILabel!
-    
-    private let spinner = SpinnerViewController()
-    private let tokenViewModel = TokenViewModel(token: nil,storage: Storage())
-
-    
-    private let toast = Toast()
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-    // Progress Dialog
+    // Showing and Removing Spinner
+    
+    private let spinner = SpinnerViewController()
+    
     private func startSpinner(){
+        
         DispatchQueue.main.async {
-            Log.info(key: "startSpinner()",value: "is Begun")
-            self.spinner.showSpinner(viewController: self)
             
+            Log.info(key: "startSpinner()",value: "is Begun")
+            
+            self.spinner.showSpinner(viewController: self)
         }
         
     }
     
     private func stopSpinner(){
+        
         DispatchQueue.main.async {
+            
             Log.info(key: "stopSpinner()",value: "is Begun")
+            
             self.spinner.disableSpinner()
-            
         }
     }
     
     
-    // Failed Signing in.
+    // Showing Toast Message
+    
+    private let toast = Toast()
+    
     private func showToastMessage(message:String){
+        
         DispatchQueue.main.async {
+            
             Log.info(key: "showToastMessage()",value: "is Begun")
-            let toast = Toast()
-            toast.showToast(message:message,viewController:self)
+            
+            self.toast.showToast(message:message,viewController:self)
         }
         
     }
     
+    // Handling UIButton Action
     
-    private func validateInputs() -> Bool{
-        
-        var response = true
-        
-        // Username
-        let usernameValidation = UsernameValidation.validateUsername(username: textFieldUsername.text!)
-        
-        if(usernameValidation != "OK"){
-            
-            labelUsernameError.text = usernameValidation
-            response = false
-            
-        } else{
-            labelUsernameError.text = ""
-        }
-        
-        // Password
-        
-        let passwordValidation = PasswordValidation.validatePassword(password: textFieldPassword.text!, passwordAgain: nil)
-        
-        if(passwordValidation != "OK"){
-            
-            labelPasswordError.text = passwordValidation
-            response = false
-            
-        } else{
-            labelPasswordError.text = ""
-        }
-        
-        return response
-      
-    }
-    
-    
-    @IBAction func showForgotPassword(_ sender: Any) {
-        Log.info(key: "showForgotPassword()",value: "is Begun")
-    }
+    @IBOutlet weak var buttonSignin: UIButton!
     
     @IBAction func actionSignin(_ sender: Any) {
+        
         Log.info(key: "actionSignin()",value: "is Begun")
         
-        if validateInputs(){
+        setSigninViewModel()
+        
+        if(validateUsername() && validatePassword()){
+            
+            // OK
             startSpinner()
             signin()
         }
         
     }
     
- 
     
-    private func showHomeScreen(){
-        DispatchQueue.main.async {
-            Log.info(key: "showHome()",value: "is Begun")
-            self.performSegue(withIdentifier: "signinTOhome", sender: nil)
+    // SigninView Model
+    
+    private var signinViewModel:SigninViewModel?
+    
+    private func createModel() -> Signin{
+    
+       return Signin(username: textFieldUsername.text!, password: textFieldPassword.text!)
+    }
+    
+    private func setSigninViewModel(){
+        
+        // View Model
+        self.signinViewModel = SigninViewModel(model: createModel())
+        
+        // View Model Binding
+        setSigninViewModelBinding()
+        
+    }
+    
+    private func setSigninViewModelBinding(){
+        
+        signinViewModel!.bindViewModelToController = {
+            
+            Log.info(key: "setSigninViewModelBinding", value: "is Begun")
+            
+            // Handle Response
+            self.handleResponse(data: self.signinViewModel?.data, error: self.signinViewModel?.error)
+            
+            
+            // Spinner
+            self.stopSpinner()
+            
         }
+        
     }
     
     
     
-    private func showEmailScreen(){
-        DispatchQueue.main.async {
-            Log.info(key: "showEmail()",value: "is Begun")
-            self.performSegue(withIdentifier: "signinTOemail", sender: nil)
+    // Validating Username
+    
+    @IBOutlet weak var textFieldUsername: UITextField!
+    
+    @IBOutlet weak var labelUsernameError: UILabel!
+    
+    private func validateUsername() -> Bool{
+        
+        let message = signinViewModel?.validateUsername()
+        
+        if(message == NSLocalizedString("success", comment: "")){
+            
+            setMessageToUsernameLabel(message: "")
+            return true
         }
+        
+        setMessageToUsernameLabel(message: message!)
+        return false
+    }
+    
+    private func setMessageToUsernameLabel(message:String){
+        labelUsernameError.text = message
     }
     
     
+    
+    // Validating Password
+    
+    @IBOutlet weak var textFieldPassword: UITextField!
+    
+    @IBOutlet weak var labelPasswordError: UILabel!
+    
+    private func validatePassword() -> Bool{
+        
+        let message = signinViewModel?.validatePassword()
+        
+        if(message == NSLocalizedString("success", comment: "")){
+            
+            setMessageToPasswordLabel(message: "")
+            return true
+        }
+
+        setMessageToPasswordLabel(message: message!)
+        return false
+    }
+
+    private func setMessageToPasswordLabel(message:String){
+        labelPasswordError.text = message
+    }
+    
+    
+    
+    // Starting Signin Action
     private func signin(){
+        
         Log.info(key: "SigninViewController signin()",value: "is Begun")
         
-        let signin = Signin(username: textFieldUsername.text!, password: textFieldPassword.text!)
-        let viewModel = SigninViewModel(model:signin)
+        signinViewModel?.signin()
         
-        //Binding
-        viewModel.bindViewModelToController = {
-            self.token = viewModel.token
-            self.error = viewModel.error
-        }
     }
     
     
-    private var token:Token?{
-        didSet{
-            stopSpinner()
-            if(self.token != nil){
-                let viewModel = TokenViewModel(token:self.token,storage: Storage())
-                viewModel.saveToken()
-            }
-        }
-    }
+    // Handle Response
     
-    private var error:String?{
-        didSet{
+    
+    private func handleResponse(data:Data?, error:[String]?){
+        
+        if(error != nil){
             
-            if(self.error != nil){
-                
-                if(self.error == "Email adresinizi doğrulamalısınız"){
-                    
-                    showToastMessage(message: NSLocalizedString("error_confirm_email", comment: ""))
-                    showEmailScreen()
-                    
-                }else if(self.error == "Kullanıcı adı veya şifre hatalı"){
-                    
-                  showToastMessage(message: NSLocalizedString("error_invalid_credentials", comment: ""))
-                
-                }else{
-                    showToastMessage(message: NSLocalizedString("error_something_went_wrong", comment: ""))
-                }
-                
-            }
+            Log.info(key: "handleResponse", value: "error")
             
+            showError(error:error)
+            return
+        }
+        
+        setTokenViewModelData(data:data)
+    }
+    
+    private func showError(error:[String]?){
+        
+        let message = error![0]
+        
+        showToastMessage(message: message)
+        
+    }
+    
+    
+    // Token View Model
+    
+    private var tokenViewModel:TokenViewModel?
+    
+    private func setTokenViewModelData(data:Data?){
+        
+        tokenViewModel = TokenViewModel(token: nil)
+        
+        tokenViewModel!.data = data
+        
+        tokenViewModel?.saveToken()
+    }
+   
+    
+    // Segues
+    
+    private func showHomeScreen(){
+        
+        DispatchQueue.main.async {
+            
+            Log.info(key: "showHomeScreen()",value: "is Begun")
+            
+            self.performSegue(withIdentifier: SegueKeys.signin_to_home.rawValue, sender: nil)
+        }
+        
+    }
+    
+
+    private func showEmailScreen(){
+        
+        DispatchQueue.main.async {
+            
+            Log.info(key: "showEmailScreen()",value: "is Begun")
+            
+            self.performSegue(withIdentifier: SegueKeys.signin_to_email.rawValue, sender: nil)
+        }
+        
+    }
+    
+    @IBAction func showForgotPasswordScreen(_ sender: Any) {
+        
+        DispatchQueue.main.async {
+            
+            Log.info(key: "showForgotPasswordScreen()",value: "is Begun")
+            
+            self.performSegue(withIdentifier: SegueKeys.sign_to_forgotpassword.rawValue, sender: nil)
+        }
+        
+    }
+    
+    @IBAction func showCityScreen(_ sender: Any) {
+        
+        DispatchQueue.main.async {
+            
+            Log.info(key: "showCityScreen()",value: "is Begun")
+            
+            self.performSegue(withIdentifier: SegueKeys.signin_to_city.rawValue, sender: nil)
         }
     }
+    
+ 
     
     
 }

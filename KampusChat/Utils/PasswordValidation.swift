@@ -10,7 +10,7 @@ import Foundation
 class PasswordValidation{
     
     
-    static func validatePassword(password:String, passwordAgain:String?)->String{
+    func validatePassword(password:String, passwordAgain:String?)->String{
         
         if(password.count < 6 || password.count > 10){
             return NSLocalizedString("error_invalid_characters_length", comment: "")

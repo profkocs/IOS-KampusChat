@@ -16,6 +16,8 @@ class PasswordViewController: UIViewController {
     @IBOutlet weak var labelPasswordStatus: UILabel!
     @IBOutlet weak var textFieldPasswordAgain: UITextField!
     
+    private let passworValidation = PasswordValidation()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -25,7 +27,7 @@ class PasswordViewController: UIViewController {
     
     private func validatePassword()->Bool{
         
-        let validationResponse = PasswordValidation.validatePassword(password: textfieldPassword.text!, passwordAgain: textFieldPasswordAgain.text!)
+        let validationResponse = passworValidation.validatePassword(password: textfieldPassword.text!, passwordAgain: textFieldPasswordAgain.text!)
         
         if(validationResponse != "OK"){
             labelPasswordStatus.text = validationResponse

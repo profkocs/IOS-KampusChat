@@ -148,7 +148,7 @@
                     </view>
                     <connections>
                         <outlet property="labelStatus" destination="AgO-LX-LPw" id="22s-cm-yIN"/>
-                        <segue destination="EX7-vw-zIc" kind="show" identifier="splashTOsignin" id="RZ4-oB-LeS"/>
+                        <segue destination="EX7-vw-zIc" kind="show" identifier="splashTOhome" id="RZ4-oB-LeS"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="splashTOsignin" id="50n-aW-XmC"/>
                     </connections>
                 </viewController>
@@ -229,7 +229,7 @@
                                                     <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="showForgotPassword:" destination="BYZ-38-t0r" eventType="touchDown" id="eeP-ab-oTh"/>
+                                                    <action selector="showForgotPasswordScreen:" destination="BYZ-38-t0r" eventType="touchDown" id="JN2-Gn-Svm"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qMl-pE-rgW">
@@ -271,7 +271,8 @@
                                                 </constraints>
                                                 <state key="normal" title="Signup Now"/>
                                                 <connections>
-                                                    <segue destination="Jjw-uD-GmY" kind="show" identifier="signinTOcities" id="kLS-jK-u3S"/>
+                                                    <action selector="showCityScreen:" destination="BYZ-38-t0r" eventType="touchDown" id="jCM-lV-WB5"/>
+                                                    <segue destination="Jjw-uD-GmY" kind="show" identifier="signinTOcity" id="kLS-jK-u3S"/>
                                                 </connections>
                                             </button>
                                         </subviews>

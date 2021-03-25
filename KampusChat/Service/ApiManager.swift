@@ -24,7 +24,9 @@ class ApiManager{
     
     // Return Variables
     var data:Data?{
+        
         didSet{
+            
             self.bindManagerToService()
         }
     }
@@ -36,22 +38,31 @@ class ApiManager{
     
     //Initialize
     init(request:URLRequest){
+        
         self.request = request
     }
     
     // Process Function
     func startTask(){
+        
         Log.info(key: "Task", value: "is Begun")
+        
         task =  URLSession.shared.dataTask(with:request) { (data, response, error) in
+            
             Log.info(key: "task", value: "is done")
+            
             self.error = error
+            
             self.response = response
+            
             self.data = data
         }
+        
         task!.resume()
     }
     
     public func stopTask(){
+        
         task!.cancel()
     }
 

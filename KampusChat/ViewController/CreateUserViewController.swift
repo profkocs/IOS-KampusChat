@@ -19,8 +19,9 @@ class CreateUserViewController: UIViewController {
     
     @IBOutlet weak var labelEmailStatus: UILabel!
     
-    let spinner = SpinnerViewController()
-    let toast = Toast()
+    private let spinner = SpinnerViewController()
+    private let toast = Toast()
+    private let usernameValidation = UsernameValidation()
    
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +32,7 @@ class CreateUserViewController: UIViewController {
         var response = true
         // Username
         
-        let usernameValidation = UsernameValidation.validateUsername(username: textFieldUsername.text!)
+        let usernameValidation = self.usernameValidation.validateUsername(username: textFieldUsername.text!)
         if(usernameValidation != "OK"){
             labelUsernameStatus.text = usernameValidation
             response = false

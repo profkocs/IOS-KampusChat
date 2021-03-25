@@ -10,7 +10,7 @@ import Foundation
 class UsernameValidation{
     
     
-    static func validateUsername(username:String)->String{
+    func validateUsername(username:String)->String{
     
         if((username.count) == 0 || (username.count) < 3){
             
@@ -21,7 +21,7 @@ class UsernameValidation{
             return NSLocalizedString("error_username_first_character", comment: "")
         }
     
-        return "OK"
+        return NSLocalizedString("success", comment: "")
     }
     
 }

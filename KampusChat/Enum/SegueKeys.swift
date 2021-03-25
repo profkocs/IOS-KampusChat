@@ -15,7 +15,14 @@ import Foundation
 
 enum SegueKeys:String{
     
+    // Splash
     case splash_to_signin = "splashTOsignin"
     case splash_to_home = "splashTOhome"
+    
+    // Sign in
+    case signin_to_home = "signinTOhome"
+    case sign_to_forgotpassword = "signinTOforgotpassword"
+    case signin_to_city = "signinTOcity"
+    case signin_to_email = "signinTOemail"
   
 }

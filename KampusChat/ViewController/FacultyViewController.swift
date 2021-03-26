@@ -11,105 +11,203 @@ import UIKit
 class FacultyViewController: UIViewController {
 
     
-    var faculties:[Academic]? = []
-    let toast = Toast()
-    let spinner = SpinnerViewController()
-    var signupViewModel:SignupViewModel!
-    var viewModel: AcademicViewModel!
-    
-    var url:String = ""
-    
-    
     @IBOutlet weak var tableViewFaculties: UITableView!
+    
+    var signupViewModel:SignupViewModel?
+    
+    var faculties:[Academic]? = []
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // TableView
         tableViewFaculties.delegate = self
         tableViewFaculties.dataSource = self
-        showSpinner()
-        prepareURL()
-        viewModel = AcademicViewModel(url:self.url, key: AcademicKeys.faculty.rawValue)
         
-        viewModel.bindViewModelToController = {
-            self.handleFacultiesResponse(faculties: self.viewModel.datas, error: self.viewModel.error)
-        }
+        startSpinner()
+        
+        prepareUrl()
+        
+        setAcademicViewModel()
+        
+        startAction()
         
     }
     
-    private func prepareURL(){
-        let university_id = signupViewModel.signup.universityId!
-        url = ApiURL.faculties.rawValue + "?id=" + String(university_id)
-    }
+    // Showing and Removing Spinner
     
-    private func showSpinner(){
+    private let spinner = SpinnerViewController()
+    
+    private func startSpinner(){
+        
         DispatchQueue.main.async {
-            Log.info(key: "showSpinner",value: "is Begun")
+            
+            Log.info(key: "startSpinner()",value: "is Begun")
+            
             self.spinner.showSpinner(viewController: self)
         }
+        
     }
     
     private func stopSpinner(){
+        
         DispatchQueue.main.async {
-            Log.info(key: "stopSpinner",value: "is Begun")
+            
+            Log.info(key: "stopSpinner()",value: "is Begun")
+            
             self.spinner.disableSpinner()
         }
     }
     
     
-    func handleFacultiesResponse(faculties: [Academic]?, error: String?) {
+    // Showing Toast Message
+    
+    private let toast = Toast()
+    
+    private func showToastMessage(message:String){
         
-        if(error == nil && faculties != nil){
-            self.faculties = faculties
-            updateTable()
-        }else{
-            showToastMessage()
+        DispatchQueue.main.async {
+            
+            Log.info(key: "showToastMessage()",value: "is Begun")
+            
+            self.toast.showToast(message:message,viewController:self)
         }
-        
-        stopSpinner()
         
     }
     
-    private func showToastMessage(){
-        DispatchQueue.main.async {
-            self.toast.showToast(message: NSLocalizedString("error_something_went_wrong", comment: ""), viewController: self)
-        }
+    
+    // URL
+    private var url:String?
+    
+    private func prepareUrl(){
+        
+        let university_id = signupViewModel!.signup.universityId
+        url = ApiURL.faculties.rawValue + "?id=" + String(university_id!)
+        
     }
+    
+    
+    // Setting AcademicView Model
+    
+    private var academicViewModel:AcademicViewModel?
+    
+    private func setAcademicViewModel(){
+        
+        // View Model
+        self.academicViewModel = AcademicViewModel(url: self.url!)
+        
+        // View Model Binding
+        setAcademicViewModelBinding()
+        
+    }
+    
+    private func setAcademicViewModelBinding(){
+        
+        academicViewModel!.bindViewModelToController = {
+            
+            Log.info(key: "setAcademicViewModelBinding", value: "is Begun")
+            
+            // Handle Response
+            self.handleResponse(error: self.academicViewModel?.error)
+            
+            
+            // Spinner
+            self.stopSpinner()
+            
+        }
+        
+    }
+    
+    // Starting Action
+    private func startAction(){
+        
+        academicViewModel?.startAction()
+    }
+    
+    
+    // Handling Data and Error
+    
+    private func handleResponse(error:[String]?){
+        
+        if(error != nil){
+            
+            Log.info(key: "handleResponse", value: "error")
+            
+            showError(error:error)
+            return
+        }
+        
+        getFacultyList()
+        updateTable()
+        
+    }
+    
+    private func showError(error:[String]?){
+        
+        let message = error![0]
+        
+        showToastMessage(message: message)
+        
+    }
+    
+    // Getting City List From AcademicViewModel
+    
+    private func getFacultyList(){
+        
+        self.faculties = academicViewModel?.getFacultyList()
+        
+    }
+    
+    // Handling TableView
     
     private func updateTable(){
+        
         DispatchQueue.main.async {
+            
             Log.info(key: "updateTable",value: "is Begun")
+            
             self.tableViewFaculties.reloadData()
         }
     }
     
+    // Setting SignupViewModel
     private func selectRow(row:Int){
-        signupViewModel.signup.facultyId = faculties![row].id
+        
+        var signup = Signup()
+        
+        signup.facultyId = faculties![row].id
+        
+        signupViewModel = SignupViewModel(signup: signup)
         
     }
     
-    private func showDepartments(){
-        self.performSegue(withIdentifier: "facultiesTOdepartments", sender: nil)
+    // Segues
+    
+    private func showDepartmentScreen(){
+        
+        self.performSegue(withIdentifier: SegueKeys.faculty_to_department.rawValue, sender: nil)
     }
     
+    
+    // Sending SignupViewModel To NextViewController via Segue
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        Log.info(key: "prepare", value: "is Begun")
-        
-        // Sending Data To DepartmentViewController
         if let department = segue.destination as? DepartmentViewController {
+            
             department.signupViewModel = self.signupViewModel
             
         }
         
-        // Getting Data From UniversityViewController
+        // Getting Data From Previous ViewController
         if let university = segue.destination as? UniversityViewController {
+            
             signupViewModel = university.signupViewModel
         }
         
         
     }
-    
     
 }
 
@@ -117,7 +215,7 @@ extension FacultyViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectRow(row:indexPath.row)
-        showDepartments()
+        showDepartmentScreen()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

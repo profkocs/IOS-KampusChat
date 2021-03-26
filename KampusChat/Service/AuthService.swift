@@ -68,7 +68,6 @@ class AuthService{
     
     private func setRequestBody(){
         
-        print(self.viewModel.encodeModel())
         request?.httpBody = self.viewModel.encodeModel()
     }
     
@@ -164,6 +163,7 @@ class AuthService{
                 // Success
                 
                 Log.info(key: "AuthService data", value: "success")
+                
                 
                 viewModel.getAPIResponse(data: data, error: nil)
                 

@@ -24,5 +24,14 @@ enum SegueKeys:String{
     case sign_to_forgotpassword = "signinTOforgotpassword"
     case signin_to_city = "signinTOcity"
     case signin_to_email = "signinTOemail"
+    
+    
+    // Sign up
+    
+    case city_to_university = "cityTOuniversity"
+    case university_to_faculty = "universityTOfaculty"
+    case faculty_to_department = "facultyTOdepartment"
+    case department_to_password = "departmentTOpassword"
+    case password_to_createuser = "passwordTOcreateuser"
   
 }

@@ -59,7 +59,7 @@ class SigninViewModel: AuthViewModel{
     
     var url = ApiURL.createToken.rawValue
     
-    func signin(){
+    func startAction(){
         
         service?.createPostRequest(url: URL(string: self.url)!)
         

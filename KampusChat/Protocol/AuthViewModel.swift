@@ -9,6 +9,7 @@
 import Foundation
 protocol AuthViewModel {
     
+    func startAction()
     func getAPIResponse(data: Data?, error:[String]?)
     func encodeModel()->Data?
 }

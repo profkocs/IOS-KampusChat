@@ -25,7 +25,6 @@
 		671BBC7C25FBF50D00608501 /* Signup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671BBC7B25FBF50D00608501 /* Signup.swift */; };
 		67207F8125FBA0D600BC812B /* Academic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67207F8025FBA0D600BC812B /* Academic.swift */; };
 		67207F8525FBA21800BC812B /* AcademicViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67207F8425FBA21800BC812B /* AcademicViewModel.swift */; };
-		67207F8725FBA2AB00BC812B /* AcademicService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67207F8625FBA2AB00BC812B /* AcademicService.swift */; };
 		67207F8925FBB15600BC812B /* CityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67207F8825FBB15600BC812B /* CityViewController.swift */; };
 		6721B73D25E859ED0063DB97 /* SigninTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6721B73C25E859ED0063DB97 /* SigninTests.swift */; };
 		67248BF625F909E30095F5AD /* ApiURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67248BF525F909E30095F5AD /* ApiURL.swift */; };
@@ -37,7 +36,6 @@
 		674E205C260CFA56005D6239 /* AuthServiceKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674E205B260CFA56005D6239 /* AuthServiceKeys.swift */; };
 		674E205E260D044F005D6239 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674E205D260D044F005D6239 /* AuthService.swift */; };
 		674E2060260D056C005D6239 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674E205F260D056C005D6239 /* AuthViewModel.swift */; };
-		6776C54125FED7D50080D505 /* AcademicKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6776C54025FED7D50080D505 /* AcademicKeys.swift */; };
 		678D1E5725D437B3001F62DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678D1E5625D437B3001F62DC /* AppDelegate.swift */; };
 		678D1E5925D437B3001F62DC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678D1E5825D437B3001F62DC /* ViewController.swift */; };
 		678D1E5C25D437B3001F62DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 678D1E5A25D437B3001F62DC /* Main.storyboard */; };
@@ -93,7 +91,6 @@
 		671BBC7B25FBF50D00608501 /* Signup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signup.swift; sourceTree = "<group>"; };
 		67207F8025FBA0D600BC812B /* Academic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Academic.swift; sourceTree = "<group>"; };
 		67207F8425FBA21800BC812B /* AcademicViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcademicViewModel.swift; sourceTree = "<group>"; };
-		67207F8625FBA2AB00BC812B /* AcademicService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcademicService.swift; sourceTree = "<group>"; };
 		67207F8825FBB15600BC812B /* CityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityViewController.swift; sourceTree = "<group>"; };
 		6721B73A25E859ED0063DB97 /* SigninTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SigninTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6721B73C25E859ED0063DB97 /* SigninTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninTests.swift; sourceTree = "<group>"; };
@@ -107,7 +104,6 @@
 		674E205B260CFA56005D6239 /* AuthServiceKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServiceKeys.swift; sourceTree = "<group>"; };
 		674E205D260D044F005D6239 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		674E205F260D056C005D6239 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
-		6776C54025FED7D50080D505 /* AcademicKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcademicKeys.swift; sourceTree = "<group>"; };
 		678D1E5325D437B3001F62DC /* KampusChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KampusChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		678D1E5625D437B3001F62DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		678D1E5825D437B3001F62DC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -225,7 +221,6 @@
 			isa = PBXGroup;
 			children = (
 				673AFD0325F7AA9A00995DE1 /* ApiManager.swift */,
-				67207F8625FBA2AB00BC812B /* AcademicService.swift */,
 				67071FF6260699FA005028C3 /* SignupService.swift */,
 				674E205D260D044F005D6239 /* AuthService.swift */,
 			);
@@ -244,7 +239,6 @@
 			isa = PBXGroup;
 			children = (
 				67248BF525F909E30095F5AD /* ApiURL.swift */,
-				6776C54025FED7D50080D505 /* AcademicKeys.swift */,
 				67071FF82606A175005028C3 /* SignupResponseEnum.swift */,
 				67F084E226094C22000D0793 /* StorageKeys.swift */,
 				67F084E626095AB8000D0793 /* SegueKeys.swift */,
@@ -514,7 +508,6 @@
 				67152B1A25E2CB53002C78CD /* Storage.swift in Sources */,
 				6733398E25E6CF0F002485DD /* Spinner.swift in Sources */,
 				67071FEF260666A2005028C3 /* PasswordValidation.swift in Sources */,
-				67207F8725FBA2AB00BC812B /* AcademicService.swift in Sources */,
 				67248BF625F909E30095F5AD /* ApiURL.swift in Sources */,
 				67F8397C25DDA15C00BE6EB8 /* HomeViewController.swift in Sources */,
 				67DF1AC22602B78B0045816A /* DepartmentViewController.swift in Sources */,
@@ -528,7 +521,6 @@
 				67071FF92606A175005028C3 /* SignupResponseEnum.swift in Sources */,
 				674E2060260D056C005D6239 /* AuthViewModel.swift in Sources */,
 				678D1E5725D437B3001F62DC /* AppDelegate.swift in Sources */,
-				6776C54125FED7D50080D505 /* AcademicKeys.swift in Sources */,
 				67152B1C25E2CDE1002C78CD /* Token.swift in Sources */,
 				67207F8925FBB15600BC812B /* CityViewController.swift in Sources */,
 				67071FF5260697D4005028C3 /* Cons.swift in Sources */,

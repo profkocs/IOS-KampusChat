@@ -92,7 +92,7 @@
                     </view>
                     <connections>
                         <outlet property="tableViewCities" destination="h4B-TZ-78D" id="bSb-rD-9qn"/>
-                        <segue destination="ptU-jV-uM9" kind="show" identifier="citiesTOuniversities" id="AZ5-9v-X9D"/>
+                        <segue destination="ptU-jV-uM9" kind="show" identifier="cityTOuniversity" id="AZ5-9v-X9D"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sGo-Yg-lyP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -360,7 +360,7 @@
                     </view>
                     <connections>
                         <outlet property="tableViewUniversities" destination="vG2-9i-s3y" id="eGv-8e-HJP"/>
-                        <segue destination="Md5-d7-ddd" kind="show" identifier="universitiesTOfaculties" id="1Ar-qw-q8P"/>
+                        <segue destination="Md5-d7-ddd" kind="show" identifier="universityTOfaculty" id="1Ar-qw-q8P"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QFm-Xh-q30" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -421,7 +421,7 @@
                     </view>
                     <connections>
                         <outlet property="tableViewFaculties" destination="O4w-gM-j8V" id="XPR-nB-WCM"/>
-                        <segue destination="Dcw-kh-aIO" kind="show" identifier="facultiesTOdepartments" id="CVT-mC-i1l"/>
+                        <segue destination="Dcw-kh-aIO" kind="show" identifier="facultyTOdepartment" id="CVT-mC-i1l"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9lo-wK-8Bc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -482,7 +482,7 @@
                     </view>
                     <connections>
                         <outlet property="tableViewDepartments" destination="iFF-5Z-5Jy" id="9PT-aV-Lgw"/>
-                        <segue destination="3Bs-Bg-CMK" kind="show" identifier="departmentsTOpassword" id="Jvi-6L-M0a"/>
+                        <segue destination="3Bs-Bg-CMK" kind="show" identifier="departmentTOpassword" id="Jvi-6L-M0a"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RIF-hi-Vu1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -583,7 +583,7 @@
                         <outlet property="labelPasswordStatus" destination="N6X-cd-NHC" id="tBV-Lk-wuy"/>
                         <outlet property="textFieldPasswordAgain" destination="Cww-35-BEU" id="IYN-tM-clw"/>
                         <outlet property="textfieldPassword" destination="v7f-ib-GaA" id="JFY-6E-gLW"/>
-                        <segue destination="mN4-gr-F3q" kind="show" identifier="passwordTOcreateUser" id="Wtp-Yu-XcQ"/>
+                        <segue destination="mN4-gr-F3q" kind="show" identifier="passwordTOcreateuser" id="Wtp-Yu-XcQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i4t-AV-mda" userLabel="First Responder" sceneMemberID="firstResponder"/>

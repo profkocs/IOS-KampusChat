@@ -6,28 +6,136 @@
 //  Copyright © 2021 KampusChat. All rights reserved.
 //
 
+/**
+ 
+ Class Responsibilites ->
+ 
+ -
+ - Getting Datas From Service
+ - Delivering Datas To ViewController
+ - Making Start Action
+ - Faculty List Parsing
+ - Academic List(City,University,Department) Parsing
+ 
+ Class Dependencies ->
+ 
+ - Service
+ 
+ */
+
 import Foundation
-class AcademicViewModel{
+import SwiftyJSON
+
+class AcademicViewModel:AuthViewModel{
+   
     
-    var service:AcademicService
-    var datas:[Academic]?{
-        didSet{
-            bindViewModelToController()
-        }
+    
+    var service:AuthService?
+  
+    var url:String
+    
+    init(url:String){
+        
+        self.url = url
+        
+        self.service = AuthService(viewModel: self)
     }
-    var error:String?
+    
+    // Making Start Action
+    
+    func startAction(){
+        
+        service?.createGetRequest(url: URL(string: self.url)!)
+        
+        service?.startTask()
+    }
+    
+    //Getting Datas From Service
+    
+    func getAPIResponse(data: Data?, error: [String]?) {
+        
+        self.error = error
+        self.data = data
+    }
+    
+    func encodeModel() -> Data? {
+        return nil
+    }
+    
+    
+    // Delivering Data To ViewController
     
     var bindViewModelToController: (()->()) = {}
     
-    
-    init(url:String, key:String){
-        service = AcademicService(url: url, key: key)
-        service.bindServiceToViewModel = {
-            Log.info(key: "AcademicViewModel service bind", value: "is Begun")
-            self.error = self.service.error
-            self.datas = self.service.datas
+    var data:Data?{
+        
+        didSet{
+            
+            Log.info(key: "AcademicViewModel data", value: "didSet")
+            
+            bindViewModelToController()
         }
     }
     
-
+    var error: [String]?
+    
+    // Faculty List Parsing
+    
+    func getFacultyList()->[Academic]?{
+        
+        var list:[Academic] = []
+        
+        let json = JSON(self.data)
+        
+        let data = json[AuthServiceKeys.data.rawValue]
+        
+        for item in data[AuthServiceKeys.faculty.rawValue]{
+        
+            let id = item.1[AuthServiceKeys.faculty_inline.rawValue][AuthServiceKeys.id.rawValue].intValue
+            
+            let name = item.1[AuthServiceKeys.faculty_inline.rawValue][AuthServiceKeys.name.rawValue].stringValue
+            
+            let academic = Academic(id: id, name: name)
+            
+            print(academic.id)
+            
+            list.append(academic)
+            
+        }
+        
+        return list
+        
+    }
+    
+    /** Academic List(City or University or Department) Parsing
+     @param key:String -> AuthServiceKeys -> city, university, department
+    */
+    
+    func getAcademicList(key:String) -> [Academic]?{
+        
+        var list:[Academic] = []
+        
+        let json = JSON(self.data)
+        
+        let data = json[AuthServiceKeys.data.rawValue]
+        
+        for item in data[key]{
+            
+            let id = item.1[AuthServiceKeys.id.rawValue].intValue
+            
+            let name = item.1[AuthServiceKeys.name.rawValue].stringValue
+            
+            let academic = Academic(id: id, name: name)
+            
+             print(academic.id)
+            
+            list.append(academic)
+            
+        }
+        
+        return list
+        
+    }
+    
+    
 }

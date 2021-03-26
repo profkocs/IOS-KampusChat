@@ -14,6 +14,7 @@ Class Responsibility ->
  - Showing and Removing Spinner
  - Showing Toast Message
  - Handling UIButton Action
+ - Setting SigninViewModel
  - Validating Username and Password
  - Starting Signin Action
  - Getting Data and Error From SignViewModel
@@ -99,7 +100,7 @@ class SigninViewController: UIViewController {
     }
     
     
-    // SigninView Model
+    // Setting SigninViewModel
     
     private var signinViewModel:SigninViewModel?
     
@@ -194,7 +195,7 @@ class SigninViewController: UIViewController {
         
         Log.info(key: "SigninViewController signin()",value: "is Begun")
         
-        signinViewModel?.signin()
+        signinViewModel?.startAction()
         
     }
     

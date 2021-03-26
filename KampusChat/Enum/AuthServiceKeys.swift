@@ -24,4 +24,18 @@ enum AuthServiceKeys:String{
     case refreshTokenExpiration = "refreshTokenExpiration"
     
     
+    // Academic
+    
+    case city = "cities"
+    case university = "universities"
+    case faculty = "universityFaculties"
+    case faculty_inline = "faculty"
+    case department = "departments"
+    
+    // Academic Model
+    
+    case id = "id"
+    case name = "name"
+    
+    
 }

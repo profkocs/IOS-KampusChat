@@ -6,139 +6,241 @@
 //  Copyright © 2021 KampusChat. All rights reserved.
 //
 
+/**
+ Class Responsibility ->
+ 
+ - Showing and Removing Spinner
+ - Showing Toast Message
+ - Handling UIButton Action
+ - Setting SignupViewModel
+ - Validating Username and Email
+ - Starting Signup Action
+ - Getting Data and Error From SignupViewModel
+ - Handling Errors
+ - Directing another screen.
+ 
+ 
+ Class Dependencies ->
+ 
+ - SpinnerViewController
+ - Toast
+ - SignupViewModel
+ */
+
+
+
 import UIKit
 
 class CreateUserViewController: UIViewController {
+    
 
-    var signupViewModel:SignupViewModel!
-    
-    @IBOutlet weak var textFieldEmail: UITextField!
-    @IBOutlet weak var textFieldUsername: UITextField!
-    
-    @IBOutlet weak var labelUsernameStatus: UILabel!
-    
-    @IBOutlet weak var labelEmailStatus: UILabel!
-    
-    private let spinner = SpinnerViewController()
-    private let toast = Toast()
-    private let usernameValidation = UsernameValidation()
-   
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-    private func validateInputs() -> Bool{
-        
-        var response = true
-        // Username
-        
-        let usernameValidation = self.usernameValidation.validateUsername(username: textFieldUsername.text!)
-        if(usernameValidation != "OK"){
-            labelUsernameStatus.text = usernameValidation
-            response = false
-            
-        }else{
-            labelUsernameStatus.text = ""
-        }
-        
-        if(!EmailValidation.isValidEmailAddress(emailAddressString: textFieldEmail.text!)){
-            labelEmailStatus.text = NSLocalizedString("error_invalid_email", comment: "")
-            response = false
-        }else{
-            labelEmailStatus.text = ""
-        }
-        
-        return response
-    }
+    // Showing and Removing Spinner
     
-    private func prepareViewModel(){
-        
-        self.signupViewModel.signup.userName = textFieldUsername.text!
-        self.signupViewModel.signup.email = textFieldEmail.text!
-        
-    }
+    private let spinner = SpinnerViewController()
     
-    private func showSpinner(){
+    private func startSpinner(){
+        
         DispatchQueue.main.async {
+            
+            Log.info(key: "startSpinner()",value: "is Begun")
+            
             self.spinner.showSpinner(viewController: self)
         }
+        
     }
     
     private func stopSpinner(){
+        
         DispatchQueue.main.async {
+            
+            Log.info(key: "stopSpinner()",value: "is Begun")
+            
             self.spinner.disableSpinner()
         }
     }
-    
    
     
+    // Showing Toast Message
+    
+    private let toast = Toast()
+    
+    private func showToastMessage(message:String){
+        
+        DispatchQueue.main.async {
+            
+            Log.info(key: "showToastMessage()",value: "is Begun")
+            
+            self.toast.showToast(message:message,viewController:self)
+        }
+        
+    }
+    
+    
+    // Handling UIButton Action
     
     @IBAction func signup(_ sender: Any) {
-        if validateInputs(){
-            prepareViewModel()
-            showSpinner()
-            createUser()
-        }
-    }
-    
-    @IBAction func showSignin(_ sender: Any) {
-        DispatchQueue.main.async {
-            self.performSegue(withIdentifier: "createUserTOsignin", sender: nil)
-        }
-    }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+       
+        Log.info(key: "actionSignup()",value: "is Begun")
         
-        Log.info(key: "prepare", value: "is Begun")
+        setSignupViewModel()
         
-        // Getting Data From PasswordViewController
-        if let password = segue.destination as? PasswordViewController {
-            signupViewModel = password.signupViewModel
-        }
-        
-        
-    }
-    
-    private func createUser(){
-        signupViewModel.createUser()
-        signupViewModel.bindViewModelToController = {
-            self.errors = self.signupViewModel.errors
-        }
-    }
-    
-    
-    private var errors:[String]?{
-        
-        didSet{
+        if(validateUsername() && validatePassword()){
             
-            if(errors == nil){
-                // success
-                Log.info(key: "Create User()", value: "is Succeeded")
-            }else{
-                
-                handleError()
-            }
-            
-            stopSpinner()
+            // OK
+            startSpinner()
+            signup()
         }
         
     }
     
-    private func handleError(){
+    // Setting SignupViewModel
+    
+    var signupViewModel:SignupViewModel!
+    
+    private func setSignupViewModel(){
+        
+        // View Model
+        setUsernameToViewModel()
+        setEmailToViewModel()
+        
+        // View Model Binding
+        setSignupViewModelBinding()
+        
+    }
+    
+    
+    private func setUsernameToViewModel(){
+        
+        self.signupViewModel.model.userName = textFieldUsername.text
+        
+    }
+    
+    private func setEmailToViewModel(){
+        
+        self.signupViewModel.model.email = textFieldEmail.text
+    }
+    
+    
+    private func setSignupViewModelBinding(){
+        
+        signupViewModel!.bindViewModelToController = {
+            
+            Log.info(key: "setSignupViewModelBinding", value: "is Begun")
+            
+            // Handle Response
+            self.handleResponse(data: self.signupViewModel?.data, error: self.signupViewModel?.error)
+            
+            
+            // Spinner
+            self.stopSpinner()
+            
+        }
+        
+    }
+    
+    
+    // Validating Username
+    
+    
+    @IBOutlet weak var textFieldUsername: UITextField!
+    
+    @IBOutlet weak var labelUsernameStatus: UILabel!
+    
+    private func validateUsername() -> Bool{
+        
+        let message = signupViewModel?.validateUsername()
+        
+        if(message == NSLocalizedString("success", comment: "")){
+            
+            setMessageToUsernameLabel(message: "")
+            return true
+        }
+        
+        setMessageToUsernameLabel(message: message!)
+        return false
+    }
+    
+    private func setMessageToUsernameLabel(message:String){
+        labelUsernameStatus.text = message
+    }
+    
+    
+    // Validating Email
+    
+    @IBOutlet weak var labelEmailStatus: UILabel!
+    @IBOutlet weak var textFieldEmail: UITextField!
+    
+    private func validatePassword() -> Bool{
+        
+        let message = signupViewModel?.validateEmail()
+        
+        if(message!){
+            
+            setMessageToEmailLabel(message: "")
+            return true
+        }
+        
+        setMessageToEmailLabel(message: NSLocalizedString("error_invalid_email", comment: ""))
+        return false
+    }
+    
+    private func setMessageToEmailLabel(message:String){
+        labelEmailStatus.text = message
+    }
+    
+    
+    // Starting Signup Action
+    
+    private func signup(){
+        
+        Log.info(key: "SignupViewController signup()",value: "is Begun")
+        
+        signupViewModel?.startAction()
+        
+    }
+    
+    
+    // Handle Response
+    
+    
+    private func handleResponse(data:Data?, error:[String]?){
+        
+        if(error != nil){
+            
+            Log.info(key: "handleResponse", value: "error")
+            
+            handleError(errors: error)
+            return
+        }
+        
+        showToast(message: NSLocalizedString("account_is_created", comment: ""))
+        showSigninScreen()
+    }
+    
+    
+    // Handling Errors
+    
+    private func handleError(errors:[String]?){
         
         for error in errors!{
             
             var value = true
-            if(error.contains(SignupResponseEnum.username.rawValue)){
+            if(error.contains(AuthServiceKeys.signup_error_username.rawValue)){
                 setUsernameStatusLabel()
                 value = false
             }
             
-            if(error.contains(SignupResponseEnum.email.rawValue)){
+            if(error.contains(AuthServiceKeys.signup_error_email.rawValue)){
                 setEmailStatusLabel()
                 value = false
             }
             
             if(value){
+                print(error)
                 showToast(message: NSLocalizedString("error_something_went_wrong", comment: ""))
             }
             
@@ -163,6 +265,36 @@ class CreateUserViewController: UIViewController {
         DispatchQueue.main.async {
             self.toast.showToast(message: NSLocalizedString("error_something_went_wrong", comment: ""), viewController: self)
         }
+    }
+    
+    
+    // Segues
+    
+    private func showSigninScreen(){
+        
+        DispatchQueue.main.async {
+            
+            self.performSegue(withIdentifier: SegueKeys.createuser_to_signin.rawValue, sender: nil)
+        }
+        
+    }
+    
+    @IBAction func showSignin(_ sender: Any) {
+        
+        showSigninScreen()
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        Log.info(key: "prepare", value: "is Begun")
+        
+        // Getting Data From PasswordViewController
+        if let password = segue.destination as? PasswordViewController {
+            signupViewModel = password.signupViewModel
+        }
+        
+        
     }
     
     

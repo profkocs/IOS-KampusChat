@@ -6,33 +6,99 @@
 //  Copyright © 2021 KampusChat. All rights reserved.
 //
 
+/**
+ 
+ Class Responsibilites ->
+ 
+ - Validating Username and Password
+ - Getting Datas From Service
+ - Delivering Datas To ViewController
+ - Making Start Action
+ 
+ Class Dependencies ->
+ 
+ - Service
+ 
+ */
+
+
+
 import Foundation
-class SignupViewModel{
+class SignupViewModel:AuthViewModel{
     
-    var service: SignupService?
-    var signup:Signup
+    var service: AuthService?
+    var model:Signup
     
-    init(signup:Signup){
-        self.signup = signup
+    init(model:Signup){
+        
+        self.model = model
+        
+        service = AuthService(viewModel: self)
         
     }
     
-    func createUser(){
-        service = SignupService(model:self.signup)
-        service!.bindServiceToViewModel = {
-            self.errors = self.service!.errors
+    // Validations
+    
+    private let usernameValidation = UsernameValidation()
+    private let emailValidation = EmailValidation()
+    
+    func validateUsername() -> String{
+        
+        return usernameValidation.validateUsername(username: self.model.userName!)
+    }
+    
+    func validateEmail() -> Bool{
+        
+        return emailValidation.validateEmailAddress(emailAddressString: self.model.email!)
+    }
+    
+    
+    // Making Sign up Action
+    
+    var url = ApiURL.createUser.rawValue
+    
+    func startAction(){
+        
+        service?.createPostRequest(url: URL(string: self.url)!)
+        
+        service?.startTask()
+    }
+    
+    // Encoding Model
+    func encodeModel() -> Data? {
+        
+        do{
+            
+            return try JSONEncoder().encode(self.model)
+            
+        } catch {
+            
+            return nil
         }
     }
     
-     var bindViewModelToController: (()->()) = {}
-     var errors:[String]?{
+    // Getting Data From Service
+    func getAPIResponse(data: Data?, error: [String]?) {
+        
+        self.error = error
+        self.data = data
+    }
+    
+    // Delivering Data To ViewController
+    var bindViewModelToController: (()->()) = {}
+    
+    
+    var data:Data?{
+        
         didSet{
-            if(errors != nil){
-                 print("Yesss 2")
-            }
+            
+            Log.info(key: "SignupViewModel data", value: "didSet")
+            
             bindViewModelToController()
         }
     }
+    
+    var error: [String]?
     
     
     

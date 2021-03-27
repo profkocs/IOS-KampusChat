@@ -21,7 +21,6 @@ class PasswordViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
     
     
@@ -30,6 +29,7 @@ class PasswordViewController: UIViewController {
         let validationResponse = passworValidation.validatePassword(password: textfieldPassword.text!, passwordAgain: textFieldPasswordAgain.text!)
         
         if(validationResponse != "OK"){
+            
             labelPasswordStatus.text = validationResponse
             return false
         }
@@ -38,12 +38,20 @@ class PasswordViewController: UIViewController {
         return true
     }
     
+    private func setPasswordToViewModel(){
+        
+        self.signupViewModel.model.password = self.textfieldPassword.text
+    }
+    
 
     @IBAction func showCreateUserScreen(_ sender: Any) {
+        
         if validatePassword(){
-            self.performSegue(withIdentifier: "passwordTOcreateUser", sender: nil)
+            setPasswordToViewModel()
+            self.performSegue(withIdentifier: SegueKeys.password_to_createuser.rawValue, sender: nil)
         }
     }
+
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -52,14 +60,15 @@ class PasswordViewController: UIViewController {
         
         // Sending Data To CreateUserViewController
         if let createUser = segue.destination as? CreateUserViewController {
-            self.signupViewModel.signup.password = self.textfieldPassword.text
+            
             createUser.signupViewModel = self.signupViewModel
             
         }
         
         // Getting Data From DepartmentViewController
-        if let faculty = segue.destination as? DepartmentViewController {
-            signupViewModel = faculty.signupViewModel
+        if let department = segue.destination as? DepartmentViewController {
+            
+            signupViewModel = department.signupViewModel
         }
         
         

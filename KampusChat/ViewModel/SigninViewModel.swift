@@ -40,6 +40,7 @@ class SigninViewModel: AuthViewModel{
         
     }
     
+    
     // Validations
     
     private let usernameValidation = UsernameValidation()

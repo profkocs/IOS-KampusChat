@@ -193,7 +193,7 @@ class CityViewController: UIViewController{
         
         signup.cityId = cities![row].id
         
-        signupViewModel = SignupViewModel(signup: signup)
+        signupViewModel = SignupViewModel(model: signup)
         
     }
     

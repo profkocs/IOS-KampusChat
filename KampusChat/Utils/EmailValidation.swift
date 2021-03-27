@@ -10,7 +10,7 @@ import Foundation
 
 class EmailValidation{
     
-    static func isValidEmailAddress(emailAddressString: String) -> Bool {
+     func validateEmailAddress(emailAddressString: String) -> Bool {
         
         var returnValue = true
         let emailRegEx = "[A-Z0-9a-z.-_]+@[A-Za-z0-9.-]+\\.[edu]"

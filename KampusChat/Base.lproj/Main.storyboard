@@ -703,7 +703,7 @@
                         <outlet property="labelUsernameStatus" destination="c5O-py-2Wd" id="3DD-bC-FFy"/>
                         <outlet property="textFieldEmail" destination="ofd-4d-zEv" id="f21-zn-JXc"/>
                         <outlet property="textFieldUsername" destination="GgE-oJ-2kQ" id="dgc-Yc-Xnv"/>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="createUserTOsignin" id="MMH-Vj-H5H"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="createuserTOsignin" id="MMH-Vj-H5H"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Gh-72-Jkx" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -715,6 +715,7 @@
         <image name="logo" width="375" height="150"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="50n-aW-XmC"/>
+        <segue reference="Wtp-Yu-XcQ"/>
+        <segue reference="MMH-Vj-H5H"/>
     </inferredMetricsTieBreakers>
 </document>

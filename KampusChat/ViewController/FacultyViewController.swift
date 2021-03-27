@@ -82,7 +82,7 @@ class FacultyViewController: UIViewController {
     
     private func prepareUrl(){
         
-        let university_id = signupViewModel!.signup.universityId
+        let university_id = signupViewModel!.model.universityId
         url = ApiURL.faculties.rawValue + "?id=" + String(university_id!)
         
     }
@@ -174,11 +174,9 @@ class FacultyViewController: UIViewController {
     // Setting SignupViewModel
     private func selectRow(row:Int){
         
-        var signup = Signup()
+        let faculty_id = faculties![row].id
         
-        signup.facultyId = faculties![row].id
-        
-        signupViewModel = SignupViewModel(signup: signup)
+        signupViewModel?.model.facultyId = faculty_id
         
     }
     

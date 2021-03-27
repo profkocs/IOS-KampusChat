@@ -38,4 +38,10 @@ enum AuthServiceKeys:String{
     case name = "name"
     
     
+    // Sign up
+    
+    case signup_error_username = "User name"
+    case signup_error_email = "Email"
+    
+    
 }
